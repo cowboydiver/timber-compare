@@ -1,1 +1,2238 @@
-[]
+[
+  {
+    "nameDa": "Ahorn, Amerikansk",
+    "nameEn": null,
+    "category": "american",
+    "imageUrl": "https://globaltimber.dk/wp-content/uploads/2026/04/Ahorn-amr.-600px-300px-webp.webp",
+    "properties": {
+      "botanical_name": {
+        "type": "nominal",
+        "value": "Acer saccharum"
+      },
+      "origin": {
+        "type": "nominal",
+        "value": "Nordamerika"
+      },
+      "weight": {
+        "type": "numeric",
+        "value": 650,
+        "unit": "kg/m3"
+      },
+      "moisture_content": {
+        "type": "nominal",
+        "value": "8-10%"
+      },
+      "janka_hardness": {
+        "type": "numeric",
+        "value": 1450,
+        "unit": ""
+      },
+      "modulus_of_rupture": {
+        "type": "numeric",
+        "value": 54,
+        "unit": "MPa"
+      },
+      "bending_strength": {
+        "type": "numeric",
+        "value": 560,
+        "unit": ""
+      },
+      "modulus_of_elasticity": {
+        "type": "numeric",
+        "value": 12.62,
+        "unit": "GPa"
+      },
+      "shrinkage": {
+        "type": "numeric",
+        "value": 14.7,
+        "unit": ""
+      }
+    },
+    "id": "ahorn-amerikansk"
+  },
+  {
+    "nameDa": "Ask, Amerikansk",
+    "nameEn": null,
+    "category": "american",
+    "imageUrl": "https://globaltimber.dk/wp-content/uploads/2026/04/Ask-amr.-600px-300px-webp.webp",
+    "properties": {
+      "botanical_name": {
+        "type": "nominal",
+        "value": "Fraxinus Americana"
+      },
+      "origin": {
+        "type": "nominal",
+        "value": "Nordamerika"
+      },
+      "weight": {
+        "type": "numeric",
+        "value": 650,
+        "unit": "kg/m3"
+      },
+      "moisture_content": {
+        "type": "nominal",
+        "value": "8-10%"
+      },
+      "janka_hardness": {
+        "type": "numeric",
+        "value": 760,
+        "unit": ""
+      },
+      "modulus_of_rupture": {
+        "type": "numeric",
+        "value": 103.6,
+        "unit": "MPa"
+      },
+      "bending_strength": {
+        "type": "numeric",
+        "value": 1200,
+        "unit": ""
+      },
+      "modulus_of_elasticity": {
+        "type": "numeric",
+        "value": 12.31,
+        "unit": "GPa"
+      },
+      "shrinkage": {
+        "type": "numeric",
+        "value": 13.2,
+        "unit": ""
+      }
+    },
+    "id": "ask-amerikansk"
+  },
+  {
+    "nameDa": "Basswood",
+    "nameEn": null,
+    "category": "american",
+    "imageUrl": "https://globaltimber.dk/wp-content/uploads/2026/04/Basswood-600px-300px-webp.webp",
+    "properties": {
+      "botanical_name": {
+        "type": "nominal",
+        "value": "Tilia americana"
+      },
+      "origin": {
+        "type": "nominal",
+        "value": "Østlige Nordamerika"
+      },
+      "weight": {
+        "type": "numeric",
+        "value": 400,
+        "unit": "kg/m3"
+      },
+      "moisture_content": {
+        "type": "nominal",
+        "value": "8-10%"
+      },
+      "janka_hardness": {
+        "type": "numeric",
+        "value": 410,
+        "unit": ""
+      },
+      "modulus_of_rupture": {
+        "type": "numeric",
+        "value": 32.6,
+        "unit": "MPa"
+      },
+      "bending_strength": {
+        "type": "numeric",
+        "value": 1230,
+        "unit": ""
+      },
+      "modulus_of_elasticity": {
+        "type": "numeric",
+        "value": 14.31,
+        "unit": "GPa"
+      },
+      "shrinkage": {
+        "type": "numeric",
+        "value": 15.8,
+        "unit": ""
+      }
+    },
+    "id": "basswood"
+  },
+  {
+    "nameDa": "Ceder, Western Red",
+    "nameEn": null,
+    "category": "american",
+    "imageUrl": "https://globaltimber.dk/wp-content/uploads/2026/04/Ceder-600px-300px-webp.webp",
+    "properties": {
+      "botanical_name": {
+        "type": "nominal",
+        "value": "Thuja Plicata"
+      },
+      "origin": {
+        "type": "nominal",
+        "value": "Vestlige USA og Canada"
+      },
+      "weight": {
+        "type": "numeric",
+        "value": 400,
+        "unit": "kg/m3"
+      },
+      "moisture_content": {
+        "type": "nominal",
+        "value": "8-14%"
+      },
+      "janka_hardness": {
+        "type": "numeric",
+        "value": 1450,
+        "unit": ""
+      },
+      "modulus_of_rupture": {
+        "type": "numeric",
+        "value": 51.7,
+        "unit": "MPa"
+      },
+      "bending_strength": {
+        "type": "numeric",
+        "value": 1470,
+        "unit": ""
+      },
+      "modulus_of_elasticity": {
+        "type": "numeric",
+        "value": 6.07,
+        "unit": "GPa"
+      },
+      "shrinkage": {
+        "type": "numeric",
+        "value": 6.8,
+        "unit": ""
+      }
+    },
+    "id": "ceder-western-red"
+  },
+  {
+    "nameDa": "Eg, Hvid Amerikansk",
+    "nameEn": null,
+    "category": "american",
+    "imageUrl": "https://globaltimber.dk/wp-content/uploads/2026/04/Eg.-Amr.-600px-300px-webp.webp",
+    "properties": {
+      "botanical_name": {
+        "type": "nominal",
+        "value": "Quercus alba"
+      },
+      "origin": {
+        "type": "nominal",
+        "value": "Nordlige og Østlige Amerika"
+      },
+      "weight": {
+        "type": "numeric",
+        "value": 650,
+        "unit": "kg/m3"
+      },
+      "moisture_content": {
+        "type": "nominal",
+        "value": "8-10%"
+      },
+      "janka_hardness": {
+        "type": "numeric",
+        "value": 690,
+        "unit": ""
+      },
+      "modulus_of_rupture": {
+        "type": "numeric",
+        "value": 102.3,
+        "unit": "MPa"
+      },
+      "bending_strength": {
+        "type": "numeric",
+        "value": 1470,
+        "unit": ""
+      },
+      "modulus_of_elasticity": {
+        "type": "numeric",
+        "value": 12.15,
+        "unit": "GPa"
+      },
+      "shrinkage": {
+        "type": "numeric",
+        "value": 16.3,
+        "unit": ""
+      }
+    },
+    "id": "eg-hvid-amerikansk"
+  },
+  {
+    "nameDa": "Eg, Rød Amerikansk",
+    "nameEn": null,
+    "category": "american",
+    "imageUrl": "https://globaltimber.dk/wp-content/uploads/2026/04/Eg-roed-amr-600px-300px-webp.webp",
+    "properties": {
+      "botanical_name": {
+        "type": "nominal",
+        "value": "Quercus rubra"
+      },
+      "origin": {
+        "type": "nominal",
+        "value": "Østlige Nordamerika"
+      },
+      "weight": {
+        "type": "numeric",
+        "value": 650,
+        "unit": "kg/m3"
+      },
+      "moisture_content": {
+        "type": "nominal",
+        "value": "8-10%"
+      },
+      "janka_hardness": {
+        "type": "numeric",
+        "value": 720,
+        "unit": ""
+      },
+      "modulus_of_rupture": {
+        "type": "numeric",
+        "value": 83,
+        "unit": "MPa"
+      },
+      "bending_strength": {
+        "type": "numeric",
+        "value": 1470,
+        "unit": ""
+      },
+      "modulus_of_elasticity": {
+        "type": "numeric",
+        "value": 10.2,
+        "unit": "GPa"
+      },
+      "shrinkage": {
+        "type": "numeric",
+        "value": 13.7,
+        "unit": ""
+      }
+    },
+    "id": "eg-roed-amerikansk"
+  },
+  {
+    "nameDa": "Elm, Amerikansk",
+    "nameEn": null,
+    "category": "american",
+    "imageUrl": "https://globaltimber.dk/wp-content/uploads/2026/04/Elm-amr-600px-300px-webp.webp",
+    "properties": {
+      "botanical_name": {
+        "type": "nominal",
+        "value": "Ulmus glabra"
+      },
+      "origin": {
+        "type": "nominal",
+        "value": "Nordamerika"
+      },
+      "weight": {
+        "type": "numeric",
+        "value": 550,
+        "unit": "kg/m3"
+      },
+      "moisture_content": {
+        "type": "nominal",
+        "value": "8-10%"
+      },
+      "janka_hardness": {
+        "type": "numeric",
+        "value": 440,
+        "unit": ""
+      },
+      "modulus_of_rupture": {
+        "type": "numeric",
+        "value": 102.3,
+        "unit": "MPa"
+      },
+      "bending_strength": {
+        "type": "numeric",
+        "value": 1070,
+        "unit": ""
+      },
+      "modulus_of_elasticity": {
+        "type": "numeric",
+        "value": 12.15,
+        "unit": "GPa"
+      },
+      "shrinkage": {
+        "type": "numeric",
+        "value": 14.6,
+        "unit": ""
+      }
+    },
+    "id": "elm-amerikansk"
+  },
+  {
+    "nameDa": "Kirsebær, Amerikansk",
+    "nameEn": null,
+    "category": "american",
+    "imageUrl": "https://globaltimber.dk/wp-content/uploads/2026/04/Kirsebaer-amr-600px-300px-webp.webp",
+    "properties": {
+      "botanical_name": {
+        "type": "nominal",
+        "value": "Prunus Serotina"
+      },
+      "origin": {
+        "type": "nominal",
+        "value": "Nordamerika"
+      },
+      "weight": {
+        "type": "numeric",
+        "value": 550,
+        "unit": "kg/m3"
+      },
+      "moisture_content": {
+        "type": "nominal",
+        "value": "8-10%"
+      },
+      "janka_hardness": {
+        "type": "numeric",
+        "value": 950,
+        "unit": ""
+      },
+      "modulus_of_rupture": {
+        "type": "numeric",
+        "value": 84.8,
+        "unit": "MPa"
+      },
+      "bending_strength": {
+        "type": "numeric",
+        "value": 1070,
+        "unit": ""
+      },
+      "modulus_of_elasticity": {
+        "type": "numeric",
+        "value": 10.3,
+        "unit": "GPa"
+      },
+      "shrinkage": {
+        "type": "numeric",
+        "value": 11.5,
+        "unit": ""
+      }
+    },
+    "id": "kirsebaer-amerikansk"
+  },
+  {
+    "nameDa": "Oregon Pine",
+    "nameEn": null,
+    "category": "american",
+    "imageUrl": "https://globaltimber.dk/wp-content/uploads/2026/04/Oregon-Pine-600px-300px-webp.webp",
+    "properties": {
+      "botanical_name": {
+        "type": "nominal",
+        "value": "Pseudotsuga Menziensii"
+      },
+      "origin": {
+        "type": "nominal",
+        "value": "Nordamerika, Canada"
+      },
+      "weight": {
+        "type": "numeric",
+        "value": 500,
+        "unit": "kg/m3"
+      },
+      "moisture_content": {
+        "type": "nominal",
+        "value": "8-14%"
+      },
+      "janka_hardness": {
+        "type": "numeric",
+        "value": 320,
+        "unit": ""
+      },
+      "modulus_of_rupture": {
+        "type": "numeric",
+        "value": 86.2,
+        "unit": "MPa"
+      },
+      "bending_strength": {
+        "type": "numeric",
+        "value": 790,
+        "unit": ""
+      },
+      "modulus_of_elasticity": {
+        "type": "numeric",
+        "value": 12.17,
+        "unit": "GPa"
+      },
+      "shrinkage": {
+        "type": "numeric",
+        "value": 11.6,
+        "unit": ""
+      }
+    },
+    "id": "oregon-pine"
+  },
+  {
+    "nameDa": "Poppel, Amerikansk",
+    "nameEn": null,
+    "category": "american",
+    "imageUrl": "https://globaltimber.dk/wp-content/uploads/2026/04/Poppel-600px-300px-webp.webp",
+    "properties": {
+      "botanical_name": {
+        "type": "nominal",
+        "value": "Liriodendron Tulipfera"
+      },
+      "origin": {
+        "type": "nominal",
+        "value": "Nordøstlig Amerika"
+      },
+      "weight": {
+        "type": "numeric",
+        "value": 450,
+        "unit": "kg/m3"
+      },
+      "moisture_content": {
+        "type": "nominal",
+        "value": "8-10%"
+      },
+      "janka_hardness": {
+        "type": "numeric",
+        "value": 1580,
+        "unit": ""
+      },
+      "modulus_of_rupture": {
+        "type": "numeric",
+        "value": 69.7,
+        "unit": "MPa"
+      },
+      "bending_strength": {
+        "type": "numeric",
+        "value": 86.2,
+        "unit": ""
+      },
+      "modulus_of_elasticity": {
+        "type": "numeric",
+        "value": 10.6,
+        "unit": "GPa"
+      },
+      "shrinkage": {
+        "type": "numeric",
+        "value": 12.7,
+        "unit": ""
+      }
+    },
+    "id": "poppel-amerikansk"
+  },
+  {
+    "nameDa": "Red alder",
+    "nameEn": null,
+    "category": "american",
+    "imageUrl": "https://globaltimber.dk/wp-content/uploads/2026/04/Red-Alder-600px-300px-webp.webp",
+    "properties": {
+      "botanical_name": {
+        "type": "nominal",
+        "value": "Alnus Rubra"
+      },
+      "origin": {
+        "type": "nominal",
+        "value": "Nordamerika"
+      },
+      "weight": {
+        "type": "numeric",
+        "value": 450,
+        "unit": "kg/m3"
+      },
+      "moisture_content": {
+        "type": "nominal",
+        "value": "8-10%"
+      },
+      "janka_hardness": {
+        "type": "numeric",
+        "value": 440,
+        "unit": ""
+      },
+      "modulus_of_rupture": {
+        "type": "numeric",
+        "value": 69.7,
+        "unit": "MPa"
+      },
+      "bending_strength": {
+        "type": "numeric",
+        "value": 850,
+        "unit": ""
+      },
+      "modulus_of_elasticity": {
+        "type": "numeric",
+        "value": 10.9,
+        "unit": "GPa"
+      },
+      "shrinkage": {
+        "type": "numeric",
+        "value": 12.6,
+        "unit": ""
+      }
+    },
+    "id": "red-alder"
+  },
+  {
+    "nameDa": "Southern Yellow Pine",
+    "nameEn": null,
+    "category": "american",
+    "imageUrl": "https://globaltimber.dk/wp-content/uploads/2026/04/Yellow-Pine-600px-300px-webp.webp",
+    "properties": {
+      "botanical_name": {
+        "type": "nominal",
+        "value": "Pinus Echinata"
+      },
+      "origin": {
+        "type": "nominal",
+        "value": "Nordamerika"
+      },
+      "weight": {
+        "type": "numeric",
+        "value": 550,
+        "unit": "kg/m3"
+      },
+      "moisture_content": {
+        "type": "nominal",
+        "value": "8-14%"
+      },
+      "janka_hardness": {
+        "type": "numeric",
+        "value": 690,
+        "unit": ""
+      },
+      "modulus_of_rupture": {
+        "type": "numeric",
+        "value": 90.3,
+        "unit": "MPa"
+      },
+      "bending_strength": {
+        "type": "numeric",
+        "value": 1030,
+        "unit": ""
+      },
+      "modulus_of_elasticity": {
+        "type": "numeric",
+        "value": 12.1,
+        "unit": "GPa"
+      },
+      "shrinkage": {
+        "type": "numeric",
+        "value": 12.3,
+        "unit": ""
+      }
+    },
+    "id": "southern-yellow-pine"
+  },
+  {
+    "nameDa": "Valnød, amerikansk",
+    "nameEn": null,
+    "category": "american",
+    "imageUrl": "https://globaltimber.dk/wp-content/uploads/2026/04/Valnoed-600px-300px-webp.webp",
+    "properties": {
+      "botanical_name": {
+        "type": "nominal",
+        "value": "Juglans Nigra"
+      },
+      "origin": {
+        "type": "nominal",
+        "value": "Østlige Nordamerika"
+      },
+      "weight": {
+        "type": "numeric",
+        "value": 600,
+        "unit": "kg/m3"
+      },
+      "moisture_content": {
+        "type": "nominal",
+        "value": "8-10%"
+      },
+      "janka_hardness": {
+        "type": "numeric",
+        "value": 420,
+        "unit": ""
+      },
+      "modulus_of_rupture": {
+        "type": "numeric",
+        "value": 100.7,
+        "unit": "MPa"
+      },
+      "bending_strength": {
+        "type": "numeric",
+        "value": 1030,
+        "unit": ""
+      },
+      "modulus_of_elasticity": {
+        "type": "numeric",
+        "value": 11.59,
+        "unit": "GPa"
+      },
+      "shrinkage": {
+        "type": "numeric",
+        "value": 12.8,
+        "unit": ""
+      }
+    },
+    "id": "valnoed-amerikansk"
+  },
+  {
+    "nameDa": "Ahorn, Europæisk",
+    "nameEn": null,
+    "category": "european",
+    "imageUrl": "",
+    "properties": {
+      "botanical_name": {
+        "type": "nominal",
+        "value": "Acer pseudoplatanus"
+      },
+      "origin": {
+        "type": "nominal",
+        "value": "Europa"
+      },
+      "weight": {
+        "type": "numeric",
+        "value": 650,
+        "unit": "kg/m3"
+      },
+      "moisture_content": {
+        "type": "nominal",
+        "value": "8-10%"
+      },
+      "janka_hardness": {
+        "type": "numeric",
+        "value": 670,
+        "unit": ""
+      },
+      "modulus_of_rupture": {
+        "type": "numeric",
+        "value": 60.8,
+        "unit": "MPa"
+      },
+      "bending_strength": {
+        "type": "numeric",
+        "value": 1120,
+        "unit": ""
+      },
+      "modulus_of_elasticity": {
+        "type": "numeric",
+        "value": 12.62,
+        "unit": "GPa"
+      },
+      "shrinkage": {
+        "type": "numeric",
+        "value": 11.5,
+        "unit": ""
+      }
+    },
+    "id": "ahorn-europaeisk"
+  },
+  {
+    "nameDa": "Ask, Europæisk",
+    "nameEn": null,
+    "category": "european",
+    "imageUrl": "",
+    "properties": {
+      "botanical_name": {
+        "type": "nominal",
+        "value": "Fraxinus excelsior"
+      },
+      "origin": {
+        "type": "nominal",
+        "value": "Europa"
+      },
+      "weight": {
+        "type": "numeric",
+        "value": 650,
+        "unit": "kg/m3"
+      },
+      "moisture_content": {
+        "type": "nominal",
+        "value": "8-10%"
+      },
+      "janka_hardness": {
+        "type": "numeric",
+        "value": 760,
+        "unit": ""
+      },
+      "modulus_of_rupture": {
+        "type": "numeric",
+        "value": 103.6,
+        "unit": "MPa"
+      },
+      "bending_strength": {
+        "type": "numeric",
+        "value": 1200,
+        "unit": ""
+      },
+      "modulus_of_elasticity": {
+        "type": "numeric",
+        "value": 12.31,
+        "unit": "GPa"
+      },
+      "shrinkage": {
+        "type": "numeric",
+        "value": 13.2,
+        "unit": ""
+      }
+    },
+    "id": "ask-europaeisk"
+  },
+  {
+    "nameDa": "Birk",
+    "nameEn": null,
+    "category": "european",
+    "imageUrl": "",
+    "properties": {
+      "botanical_name": {
+        "type": "nominal",
+        "value": "Betula Pendula"
+      },
+      "origin": {
+        "type": "nominal",
+        "value": "Europa"
+      },
+      "weight": {
+        "type": "numeric",
+        "value": 600,
+        "unit": "kg/m3"
+      },
+      "moisture_content": {
+        "type": "nominal",
+        "value": "8-10%"
+      },
+      "janka_hardness": {
+        "type": "numeric",
+        "value": 490,
+        "unit": ""
+      },
+      "modulus_of_rupture": {
+        "type": "numeric",
+        "value": 114.3,
+        "unit": "MPa"
+      },
+      "bending_strength": {
+        "type": "numeric",
+        "value": 1470,
+        "unit": ""
+      },
+      "modulus_of_elasticity": {
+        "type": "numeric",
+        "value": 13.96,
+        "unit": "GPa"
+      },
+      "shrinkage": {
+        "type": "numeric",
+        "value": 13.7,
+        "unit": ""
+      }
+    },
+    "id": "birk"
+  },
+  {
+    "nameDa": "Bøg",
+    "nameEn": null,
+    "category": "european",
+    "imageUrl": "",
+    "properties": {
+      "botanical_name": {
+        "type": "nominal",
+        "value": "Fagus Silvatica"
+      },
+      "origin": {
+        "type": "nominal",
+        "value": "Nord- og Centraleuropa"
+      },
+      "weight": {
+        "type": "numeric",
+        "value": 650,
+        "unit": "kg/m3"
+      },
+      "moisture_content": {
+        "type": "nominal",
+        "value": "8-10%"
+      },
+      "janka_hardness": {
+        "type": "numeric",
+        "value": 780,
+        "unit": ""
+      },
+      "modulus_of_rupture": {
+        "type": "numeric",
+        "value": 110.1,
+        "unit": "MPa"
+      },
+      "bending_strength": {
+        "type": "numeric",
+        "value": 1230,
+        "unit": ""
+      },
+      "modulus_of_elasticity": {
+        "type": "numeric",
+        "value": 14.31,
+        "unit": "GPa"
+      },
+      "shrinkage": {
+        "type": "numeric",
+        "value": 18.3,
+        "unit": ""
+      }
+    },
+    "id": "boeg"
+  },
+  {
+    "nameDa": "Douglas",
+    "nameEn": null,
+    "category": "european",
+    "imageUrl": "",
+    "properties": {
+      "botanical_name": {
+        "type": "nominal",
+        "value": "Pseodotsuga menziesii"
+      },
+      "origin": {
+        "type": "nominal",
+        "value": "Europa"
+      },
+      "weight": {
+        "type": "numeric",
+        "value": 500,
+        "unit": "kg/m3"
+      },
+      "moisture_content": {
+        "type": "nominal",
+        "value": "8-10%"
+      },
+      "janka_hardness": {
+        "type": "numeric",
+        "value": 2760,
+        "unit": ""
+      },
+      "modulus_of_rupture": {
+        "type": "numeric",
+        "value": 47.9,
+        "unit": "MPa"
+      },
+      "bending_strength": {
+        "type": "numeric",
+        "value": 720,
+        "unit": ""
+      },
+      "modulus_of_elasticity": {
+        "type": "numeric",
+        "value": 12.17,
+        "unit": "GPa"
+      },
+      "shrinkage": {
+        "type": "numeric",
+        "value": 11.6,
+        "unit": ""
+      }
+    },
+    "id": "douglas"
+  },
+  {
+    "nameDa": "Eg Røget, Europæisk",
+    "nameEn": null,
+    "category": "european",
+    "imageUrl": "",
+    "properties": {
+      "botanical_name": {
+        "type": "nominal",
+        "value": "Quercus robur"
+      },
+      "origin": {
+        "type": "nominal",
+        "value": "Europa"
+      },
+      "weight": {
+        "type": "numeric",
+        "value": 650,
+        "unit": "kg/m3"
+      },
+      "moisture_content": {
+        "type": "nominal",
+        "value": "8-10%"
+      },
+      "janka_hardness": {
+        "type": "numeric",
+        "value": 650,
+        "unit": ""
+      },
+      "modulus_of_rupture": {
+        "type": "numeric",
+        "value": 97.1,
+        "unit": "MPa"
+      },
+      "bending_strength": {
+        "type": "numeric",
+        "value": 880,
+        "unit": ""
+      },
+      "modulus_of_elasticity": {
+        "type": "numeric",
+        "value": 10.6,
+        "unit": "GPa"
+      },
+      "shrinkage": {
+        "type": "numeric",
+        "value": 12.2,
+        "unit": ""
+      }
+    },
+    "id": "eg-roeget-europaeisk"
+  },
+  {
+    "nameDa": "Eg, Europæisk",
+    "nameEn": null,
+    "category": "european",
+    "imageUrl": "",
+    "properties": {
+      "botanical_name": {
+        "type": "nominal",
+        "value": "Quercus robur"
+      },
+      "origin": {
+        "type": "nominal",
+        "value": "Europa"
+      },
+      "weight": {
+        "type": "numeric",
+        "value": 650,
+        "unit": "kg/m3"
+      },
+      "moisture_content": {
+        "type": "nominal",
+        "value": "8-10%"
+      },
+      "janka_hardness": {
+        "type": "numeric",
+        "value": 650,
+        "unit": ""
+      },
+      "modulus_of_rupture": {
+        "type": "numeric",
+        "value": 97.1,
+        "unit": "MPa"
+      },
+      "bending_strength": {
+        "type": "numeric",
+        "value": 880,
+        "unit": ""
+      },
+      "modulus_of_elasticity": {
+        "type": "numeric",
+        "value": 10.6,
+        "unit": "GPa"
+      },
+      "shrinkage": {
+        "type": "numeric",
+        "value": 12.2,
+        "unit": ""
+      }
+    },
+    "id": "eg-europaeisk"
+  },
+  {
+    "nameDa": "Thermo Ask",
+    "nameEn": null,
+    "category": "european",
+    "imageUrl": "",
+    "properties": {
+      "botanical_name": {
+        "type": "nominal",
+        "value": "Fraxinus excelsior"
+      },
+      "origin": {
+        "type": "nominal",
+        "value": "Europa"
+      }
+    },
+    "id": "thermo-ask"
+  },
+  {
+    "nameDa": "Ayous",
+    "nameEn": null,
+    "category": "tropical",
+    "imageUrl": "",
+    "properties": {
+      "botanical_name": {
+        "type": "nominal",
+        "value": "Triplochiton scleroxylon"
+      },
+      "origin": {
+        "type": "nominal",
+        "value": "Vestafrika"
+      },
+      "weight": {
+        "type": "numeric",
+        "value": 400,
+        "unit": "kg/m3"
+      },
+      "moisture_content": {
+        "type": "nominal",
+        "value": "8-12%"
+      },
+      "janka_hardness": {
+        "type": "numeric",
+        "value": 270,
+        "unit": ""
+      },
+      "modulus_of_rupture": {
+        "type": "numeric",
+        "value": 30,
+        "unit": "MPa"
+      },
+      "bending_strength": {
+        "type": "numeric",
+        "value": 560,
+        "unit": ""
+      },
+      "modulus_of_elasticity": {
+        "type": "numeric",
+        "value": 6.69,
+        "unit": "GPa"
+      },
+      "shrinkage": {
+        "type": "numeric",
+        "value": 9.5,
+        "unit": ""
+      }
+    },
+    "id": "ayous"
+  },
+  {
+    "nameDa": "Azobe",
+    "nameEn": null,
+    "category": "tropical",
+    "imageUrl": "",
+    "properties": {
+      "botanical_name": {
+        "type": "nominal",
+        "value": "Lophira Alata"
+      },
+      "origin": {
+        "type": "nominal",
+        "value": "Vestafrika"
+      },
+      "weight": {
+        "type": "numeric",
+        "value": 1250,
+        "unit": "kg/m3"
+      },
+      "moisture_content": {
+        "type": "nominal",
+        "value": "Friskskåret"
+      },
+      "janka_hardness": {
+        "type": "numeric",
+        "value": 3220,
+        "unit": ""
+      },
+      "modulus_of_rupture": {
+        "type": "numeric",
+        "value": 195.8,
+        "unit": "MPa"
+      },
+      "bending_strength": {
+        "type": "numeric",
+        "value": 2100,
+        "unit": ""
+      },
+      "modulus_of_elasticity": {
+        "type": "numeric",
+        "value": 18.99,
+        "unit": "GPa"
+      },
+      "shrinkage": {
+        "type": "numeric",
+        "value": 18.3,
+        "unit": ""
+      }
+    },
+    "id": "azobe"
+  },
+  {
+    "nameDa": "Bilinga",
+    "nameEn": null,
+    "category": "tropical",
+    "imageUrl": "",
+    "properties": {
+      "botanical_name": {
+        "type": "nominal",
+        "value": "Nauclea trillesii"
+      },
+      "origin": {
+        "type": "nominal",
+        "value": "Vestafrika"
+      },
+      "weight": {
+        "type": "numeric",
+        "value": 750,
+        "unit": "kg/m3"
+      },
+      "moisture_content": {
+        "type": "nominal",
+        "value": "8-10%"
+      },
+      "janka_hardness": {
+        "type": "numeric",
+        "value": 806,
+        "unit": ""
+      },
+      "modulus_of_rupture": {
+        "type": "numeric",
+        "value": 95,
+        "unit": "MPa"
+      },
+      "bending_strength": {
+        "type": "numeric",
+        "value": 973,
+        "unit": ""
+      },
+      "modulus_of_elasticity": {
+        "type": "numeric",
+        "value": 5.3,
+        "unit": "GPa"
+      },
+      "shrinkage": {
+        "type": "numeric",
+        "value": 14,
+        "unit": ""
+      }
+    },
+    "id": "bilinga"
+  },
+  {
+    "nameDa": "Bubinga",
+    "nameEn": null,
+    "category": "tropical",
+    "imageUrl": "",
+    "properties": {
+      "botanical_name": {
+        "type": "nominal",
+        "value": "Guibourtia tesmanii"
+      },
+      "origin": {
+        "type": "nominal",
+        "value": "Vestafrika"
+      },
+      "weight": {
+        "type": "numeric",
+        "value": 750,
+        "unit": "kg/m3"
+      },
+      "moisture_content": {
+        "type": "nominal",
+        "value": "8-10%"
+      },
+      "janka_hardness": {
+        "type": "numeric",
+        "value": 2410,
+        "unit": ""
+      },
+      "modulus_of_rupture": {
+        "type": "numeric",
+        "value": 168.3,
+        "unit": "MPa"
+      },
+      "bending_strength": {
+        "type": "numeric",
+        "value": 1470,
+        "unit": ""
+      },
+      "modulus_of_elasticity": {
+        "type": "numeric",
+        "value": 18.41,
+        "unit": "GPa"
+      },
+      "shrinkage": {
+        "type": "numeric",
+        "value": 13.9,
+        "unit": ""
+      }
+    },
+    "id": "bubinga"
+  },
+  {
+    "nameDa": "Cumaru",
+    "nameEn": null,
+    "category": "tropical",
+    "imageUrl": "",
+    "properties": {
+      "botanical_name": {
+        "type": "nominal",
+        "value": "Dipteryx spp."
+      },
+      "origin": {
+        "type": "nominal",
+        "value": "Brasilien / Peru"
+      },
+      "weight": {
+        "type": "numeric",
+        "value": 950,
+        "unit": "kg/m3"
+      },
+      "moisture_content": {
+        "type": "numeric",
+        "value": 14,
+        "unit": "+/-2 %"
+      },
+      "janka_hardness": {
+        "type": "numeric",
+        "value": 3330,
+        "unit": ""
+      },
+      "modulus_of_rupture": {
+        "type": "numeric",
+        "value": 175.1,
+        "unit": "MPa"
+      },
+      "bending_strength": {
+        "type": "numeric",
+        "value": 1470,
+        "unit": ""
+      },
+      "modulus_of_elasticity": {
+        "type": "numeric",
+        "value": 22.33,
+        "unit": "GPa"
+      },
+      "shrinkage": {
+        "type": "numeric",
+        "value": 13.9,
+        "unit": ""
+      }
+    },
+    "id": "cumaru"
+  },
+  {
+    "nameDa": "Denya",
+    "nameEn": null,
+    "category": "tropical",
+    "imageUrl": "",
+    "properties": {
+      "botanical_name": {
+        "type": "nominal",
+        "value": "Cylicodiscus gabonensis"
+      },
+      "origin": {
+        "type": "nominal",
+        "value": "Vestafrika"
+      },
+      "weight": {
+        "type": "numeric",
+        "value": 900,
+        "unit": "kg/m3"
+      },
+      "moisture_content": {
+        "type": "nominal",
+        "value": "16-18%"
+      },
+      "janka_hardness": {
+        "type": "numeric",
+        "value": 1085,
+        "unit": ""
+      },
+      "modulus_of_rupture": {
+        "type": "numeric",
+        "value": 123,
+        "unit": "MPa"
+      },
+      "bending_strength": {
+        "type": "numeric",
+        "value": 1367,
+        "unit": ""
+      },
+      "shrinkage": {
+        "type": "numeric",
+        "value": 5.9,
+        "unit": ""
+      }
+    },
+    "id": "denya"
+  },
+  {
+    "nameDa": "Ipé",
+    "nameEn": null,
+    "category": "tropical",
+    "imageUrl": "",
+    "properties": {
+      "botanical_name": {
+        "type": "nominal",
+        "value": "Tabebuia spp."
+      },
+      "origin": {
+        "type": "nominal",
+        "value": "Brasilien"
+      },
+      "weight": {
+        "type": "numeric",
+        "value": 1100,
+        "unit": "kg/m3"
+      },
+      "moisture_content": {
+        "type": "nominal",
+        "value": "Lufttørret"
+      },
+      "janka_hardness": {
+        "type": "numeric",
+        "value": 3510,
+        "unit": ""
+      },
+      "modulus_of_rupture": {
+        "type": "numeric",
+        "value": 93.8,
+        "unit": "MPa"
+      },
+      "bending_strength": {
+        "type": "numeric",
+        "value": 1470,
+        "unit": ""
+      },
+      "modulus_of_elasticity": {
+        "type": "numeric",
+        "value": 22.07,
+        "unit": "GPa"
+      },
+      "shrinkage": {
+        "type": "numeric",
+        "value": 12.4,
+        "unit": ""
+      }
+    },
+    "id": "ipe"
+  },
+  {
+    "nameDa": "Iroko",
+    "nameEn": null,
+    "category": "tropical",
+    "imageUrl": "",
+    "properties": {
+      "botanical_name": {
+        "type": "nominal",
+        "value": "Milicia excelsa"
+      },
+      "origin": {
+        "type": "nominal",
+        "value": "Vestafrika"
+      },
+      "janka_hardness": {
+        "type": "numeric",
+        "value": 1260,
+        "unit": ""
+      },
+      "modulus_of_rupture": {
+        "type": "numeric",
+        "value": 54,
+        "unit": "MPa"
+      },
+      "bending_strength": {
+        "type": "numeric",
+        "value": 950,
+        "unit": ""
+      },
+      "modulus_of_elasticity": {
+        "type": "numeric",
+        "value": 9.38,
+        "unit": "GPa"
+      },
+      "shrinkage": {
+        "type": "numeric",
+        "value": 8.8,
+        "unit": ""
+      }
+    },
+    "id": "iroko"
+  },
+  {
+    "nameDa": "Jatoba",
+    "nameEn": null,
+    "category": "tropical",
+    "imageUrl": "",
+    "properties": {
+      "botanical_name": {
+        "type": "nominal",
+        "value": "Hymenaea Courbaril"
+      },
+      "origin": {
+        "type": "nominal",
+        "value": "Brasilien"
+      },
+      "weight": {
+        "type": "numeric",
+        "value": 1000,
+        "unit": "kg/m3"
+      },
+      "moisture_content": {
+        "type": "numeric",
+        "value": 12,
+        "unit": "+/-2 %"
+      },
+      "janka_hardness": {
+        "type": "numeric",
+        "value": 2690,
+        "unit": ""
+      },
+      "modulus_of_rupture": {
+        "type": "numeric",
+        "value": 155.2,
+        "unit": "MPa"
+      },
+      "bending_strength": {
+        "type": "numeric",
+        "value": 1007,
+        "unit": ""
+      },
+      "modulus_of_elasticity": {
+        "type": "numeric",
+        "value": 18.93,
+        "unit": "GPa"
+      },
+      "shrinkage": {
+        "type": "numeric",
+        "value": 12.1,
+        "unit": ""
+      }
+    },
+    "id": "jatoba"
+  },
+  {
+    "nameDa": "Kempas",
+    "nameEn": null,
+    "category": "tropical",
+    "imageUrl": "",
+    "properties": {
+      "botanical_name": {
+        "type": "nominal",
+        "value": "Koompasia malaccensis"
+      },
+      "origin": {
+        "type": "nominal",
+        "value": "Malaysia"
+      },
+      "weight": {
+        "type": "numeric",
+        "value": 850,
+        "unit": "kg/m3"
+      },
+      "moisture_content": {
+        "type": "nominal",
+        "value": "Ca. 18-20%"
+      },
+      "janka_hardness": {
+        "type": "numeric",
+        "value": 1750,
+        "unit": ""
+      },
+      "modulus_of_rupture": {
+        "type": "numeric",
+        "value": 67.3,
+        "unit": "MPa"
+      },
+      "bending_strength": {
+        "type": "numeric",
+        "value": 1070,
+        "unit": ""
+      },
+      "modulus_of_elasticity": {
+        "type": "numeric",
+        "value": 20.09,
+        "unit": "GPa"
+      },
+      "shrinkage": {
+        "type": "numeric",
+        "value": 13.3,
+        "unit": ""
+      }
+    },
+    "id": "kempas"
+  },
+  {
+    "nameDa": "Mahogni, Khaya",
+    "nameEn": null,
+    "category": "tropical",
+    "imageUrl": "",
+    "properties": {
+      "botanical_name": {
+        "type": "nominal",
+        "value": "Khaya ivorensis"
+      },
+      "origin": {
+        "type": "nominal",
+        "value": "Vestafrika"
+      },
+      "weight": {
+        "type": "numeric",
+        "value": 600,
+        "unit": "kg/m3"
+      },
+      "moisture_content": {
+        "type": "nominal",
+        "value": "8-10%"
+      },
+      "janka_hardness": {
+        "type": "numeric",
+        "value": 1070,
+        "unit": ""
+      },
+      "modulus_of_rupture": {
+        "type": "numeric",
+        "value": 91,
+        "unit": "MPa"
+      },
+      "bending_strength": {
+        "type": "numeric",
+        "value": 730,
+        "unit": ""
+      },
+      "modulus_of_elasticity": {
+        "type": "numeric",
+        "value": 106,
+        "unit": "GPa"
+      },
+      "shrinkage": {
+        "type": "numeric",
+        "value": 10,
+        "unit": ""
+      }
+    },
+    "id": "mahogni-khaya"
+  },
+  {
+    "nameDa": "Mahogni, Sapele",
+    "nameEn": null,
+    "category": "tropical",
+    "imageUrl": "",
+    "properties": {
+      "botanical_name": {
+        "type": "nominal",
+        "value": "Entrandrophragma cylendricum"
+      },
+      "origin": {
+        "type": "nominal",
+        "value": "Vestafrika"
+      },
+      "weight": {
+        "type": "numeric",
+        "value": 650,
+        "unit": "kg/m3"
+      },
+      "moisture_content": {
+        "type": "nominal",
+        "value": "8-10%"
+      },
+      "janka_hardness": {
+        "type": "numeric",
+        "value": 1410,
+        "unit": ""
+      },
+      "modulus_of_rupture": {
+        "type": "numeric",
+        "value": 109.9,
+        "unit": "MPa"
+      },
+      "bending_strength": {
+        "type": "numeric",
+        "value": 930,
+        "unit": ""
+      },
+      "modulus_of_elasticity": {
+        "type": "numeric",
+        "value": 12.04,
+        "unit": "GPa"
+      },
+      "shrinkage": {
+        "type": "numeric",
+        "value": 12.8,
+        "unit": ""
+      }
+    },
+    "id": "mahogni-sapele"
+  },
+  {
+    "nameDa": "Mahogni, Sipo",
+    "nameEn": null,
+    "category": "tropical",
+    "imageUrl": "",
+    "properties": {
+      "botanical_name": {
+        "type": "nominal",
+        "value": "Entrandrophragma candollei"
+      },
+      "origin": {
+        "type": "nominal",
+        "value": "Vestafrika"
+      },
+      "weight": {
+        "type": "numeric",
+        "value": 650,
+        "unit": "kg/m3"
+      },
+      "moisture_content": {
+        "type": "nominal",
+        "value": "8-14%"
+      },
+      "janka_hardness": {
+        "type": "numeric",
+        "value": 1180,
+        "unit": ""
+      },
+      "modulus_of_rupture": {
+        "type": "numeric",
+        "value": 103.8,
+        "unit": "MPa"
+      },
+      "bending_strength": {
+        "type": "numeric",
+        "value": 900,
+        "unit": ""
+      },
+      "modulus_of_elasticity": {
+        "type": "numeric",
+        "value": 11.65,
+        "unit": "GPa"
+      },
+      "shrinkage": {
+        "type": "numeric",
+        "value": 11.8,
+        "unit": ""
+      }
+    },
+    "id": "mahogni-sipo"
+  },
+  {
+    "nameDa": "Meranti",
+    "nameEn": null,
+    "category": "tropical",
+    "imageUrl": "",
+    "properties": {
+      "botanical_name": {
+        "type": "nominal",
+        "value": "Shorea spp."
+      },
+      "origin": {
+        "type": "nominal",
+        "value": "Sydøstasien"
+      },
+      "weight": {
+        "type": "numeric",
+        "value": 600,
+        "unit": "kg/m3"
+      },
+      "moisture_content": {
+        "type": "nominal",
+        "value": "12-14%"
+      },
+      "janka_hardness": {
+        "type": "numeric",
+        "value": 550,
+        "unit": ""
+      },
+      "modulus_of_rupture": {
+        "type": "numeric",
+        "value": 87.7,
+        "unit": "MPa"
+      },
+      "modulus_of_elasticity": {
+        "type": "numeric",
+        "value": 12.02,
+        "unit": "GPa"
+      },
+      "shrinkage": {
+        "type": "numeric",
+        "value": 12.6,
+        "unit": ""
+      }
+    },
+    "id": "meranti"
+  },
+  {
+    "nameDa": "Merbau",
+    "nameEn": null,
+    "category": "tropical",
+    "imageUrl": "",
+    "properties": {
+      "botanical_name": {
+        "type": "nominal",
+        "value": "Intsia bijuga"
+      },
+      "origin": {
+        "type": "nominal",
+        "value": "Sydøstasien"
+      },
+      "weight": {
+        "type": "numeric",
+        "value": 800,
+        "unit": "kg/m3"
+      },
+      "moisture_content": {
+        "type": "nominal",
+        "value": "8-12%"
+      },
+      "janka_hardness": {
+        "type": "numeric",
+        "value": 1840,
+        "unit": ""
+      },
+      "modulus_of_rupture": {
+        "type": "numeric",
+        "value": 145.2,
+        "unit": "MPa"
+      },
+      "modulus_of_elasticity": {
+        "type": "numeric",
+        "value": 15.93,
+        "unit": "GPa"
+      },
+      "shrinkage": {
+        "type": "numeric",
+        "value": 8,
+        "unit": ""
+      }
+    },
+    "id": "merbau"
+  },
+  {
+    "nameDa": "Tali",
+    "nameEn": null,
+    "category": "tropical",
+    "imageUrl": "",
+    "properties": {
+      "botanical_name": {
+        "type": "nominal",
+        "value": "Erythrophleum suaveolens"
+      },
+      "origin": {
+        "type": "nominal",
+        "value": "Vestafrika"
+      },
+      "weight": {
+        "type": "numeric",
+        "value": 900,
+        "unit": "kg/m3"
+      },
+      "moisture_content": {
+        "type": "numeric",
+        "value": 14,
+        "unit": "+/-2 %"
+      },
+      "janka_hardness": {
+        "type": "numeric",
+        "value": 2920,
+        "unit": ""
+      },
+      "bending_strength": {
+        "type": "numeric",
+        "value": 1310,
+        "unit": ""
+      },
+      "modulus_of_elasticity": {
+        "type": "numeric",
+        "value": 12.04,
+        "unit": "GPa"
+      },
+      "shrinkage": {
+        "type": "numeric",
+        "value": 14.5,
+        "unit": ""
+      }
+    },
+    "id": "tali"
+  },
+  {
+    "nameDa": "Teak, plantage",
+    "nameEn": null,
+    "category": "tropical",
+    "imageUrl": "",
+    "properties": {
+      "botanical_name": {
+        "type": "nominal",
+        "value": "Tectona grandis"
+      },
+      "origin": {
+        "type": "nominal",
+        "value": "Sydamerika"
+      },
+      "weight": {
+        "type": "numeric",
+        "value": 550,
+        "unit": "kg/m3"
+      },
+      "moisture_content": {
+        "type": "nominal",
+        "value": "8-10%"
+      },
+      "janka_hardness": {
+        "type": "numeric",
+        "value": 450,
+        "unit": ""
+      },
+      "modulus_of_rupture": {
+        "type": "numeric",
+        "value": 54.8,
+        "unit": "MPa"
+      },
+      "bending_strength": {
+        "type": "numeric",
+        "value": 850,
+        "unit": ""
+      },
+      "modulus_of_elasticity": {
+        "type": "numeric",
+        "value": 12.28,
+        "unit": "GPa"
+      },
+      "shrinkage": {
+        "type": "numeric",
+        "value": 5,
+        "unit": ""
+      }
+    },
+    "id": "teak-plantage"
+  },
+  {
+    "nameDa": "Wengé",
+    "nameEn": null,
+    "category": "tropical",
+    "imageUrl": "",
+    "properties": {
+      "botanical_name": {
+        "type": "nominal",
+        "value": "Millettia laurentii"
+      },
+      "origin": {
+        "type": "nominal",
+        "value": "Vestafrika"
+      },
+      "weight": {
+        "type": "numeric",
+        "value": 750,
+        "unit": "kg/m3"
+      },
+      "moisture_content": {
+        "type": "nominal",
+        "value": "8-10%"
+      },
+      "janka_hardness": {
+        "type": "numeric",
+        "value": 1930,
+        "unit": ""
+      },
+      "modulus_of_rupture": {
+        "type": "numeric",
+        "value": 80.7,
+        "unit": "MPa"
+      },
+      "bending_strength": {
+        "type": "numeric",
+        "value": 1030,
+        "unit": ""
+      },
+      "modulus_of_elasticity": {
+        "type": "numeric",
+        "value": 17.59,
+        "unit": "GPa"
+      },
+      "shrinkage": {
+        "type": "numeric",
+        "value": 12.9,
+        "unit": ""
+      }
+    },
+    "id": "wenge"
+  },
+  {
+    "nameDa": "Zebrano",
+    "nameEn": null,
+    "category": "tropical",
+    "imageUrl": "",
+    "properties": {
+      "botanical_name": {
+        "type": "nominal",
+        "value": "Microberlinia brazzavillensis"
+      },
+      "origin": {
+        "type": "nominal",
+        "value": "Vestafrika"
+      },
+      "weight": {
+        "type": "numeric",
+        "value": 800,
+        "unit": "kg/m3"
+      },
+      "moisture_content": {
+        "type": "nominal",
+        "value": "8-10%"
+      },
+      "janka_hardness": {
+        "type": "numeric",
+        "value": 1830,
+        "unit": ""
+      },
+      "modulus_of_rupture": {
+        "type": "numeric",
+        "value": 63.5,
+        "unit": "MPa"
+      },
+      "bending_strength": {
+        "type": "numeric",
+        "value": 1030,
+        "unit": ""
+      },
+      "modulus_of_elasticity": {
+        "type": "numeric",
+        "value": 16.37,
+        "unit": "GPa"
+      },
+      "shrinkage": {
+        "type": "numeric",
+        "value": 17.8,
+        "unit": ""
+      }
+    },
+    "id": "zebrano"
+  },
+  {
+    "nameDa": null,
+    "nameEn": "Cherry",
+    "category": "american",
+    "imageUrl": "",
+    "properties": {},
+    "id": "cherry"
+  },
+  {
+    "nameDa": null,
+    "nameEn": "Ash",
+    "category": "american",
+    "imageUrl": "",
+    "properties": {},
+    "id": "ash"
+  },
+  {
+    "nameDa": null,
+    "nameEn": "Hard Maple",
+    "category": "american",
+    "imageUrl": "",
+    "properties": {},
+    "id": "hard-maple"
+  },
+  {
+    "nameDa": null,
+    "nameEn": "Hickory",
+    "category": "american",
+    "imageUrl": "",
+    "properties": {},
+    "id": "hickory"
+  },
+  {
+    "nameDa": null,
+    "nameEn": "Red Oak",
+    "category": "american",
+    "imageUrl": "",
+    "properties": {},
+    "id": "red-oak"
+  },
+  {
+    "nameDa": null,
+    "nameEn": "White Oak",
+    "category": "american",
+    "imageUrl": "",
+    "properties": {},
+    "id": "white-oak"
+  },
+  {
+    "nameDa": null,
+    "nameEn": "Poplar",
+    "category": "american",
+    "imageUrl": "",
+    "properties": {},
+    "id": "poplar"
+  },
+  {
+    "nameDa": null,
+    "nameEn": "Southern Yellow Pine",
+    "category": "american",
+    "imageUrl": "",
+    "properties": {},
+    "id": "southern-yellow-pine"
+  },
+  {
+    "nameDa": null,
+    "nameEn": "Walnut",
+    "category": "american",
+    "imageUrl": "",
+    "properties": {},
+    "id": "walnut"
+  },
+  {
+    "nameDa": null,
+    "nameEn": "Thermo Ash",
+    "category": "european",
+    "imageUrl": "",
+    "properties": {},
+    "id": "thermo-ash"
+  },
+  {
+    "nameDa": null,
+    "nameEn": "Beech",
+    "category": "european",
+    "imageUrl": "",
+    "properties": {},
+    "id": "beech"
+  },
+  {
+    "nameDa": null,
+    "nameEn": "Birch",
+    "category": "european",
+    "imageUrl": "",
+    "properties": {},
+    "id": "birch"
+  },
+  {
+    "nameDa": null,
+    "nameEn": "Sycamore (European Maple)",
+    "category": "european",
+    "imageUrl": "",
+    "properties": {},
+    "id": "sycamore-european-maple"
+  },
+  {
+    "nameDa": null,
+    "nameEn": "Oak, smoked",
+    "category": "european",
+    "imageUrl": "",
+    "properties": {},
+    "id": "oak-smoked"
+  },
+  {
+    "nameDa": null,
+    "nameEn": "Oak",
+    "category": "european",
+    "imageUrl": "",
+    "properties": {},
+    "id": "oak"
+  },
+  {
+    "nameDa": null,
+    "nameEn": "Bubinga",
+    "category": "tropical",
+    "imageUrl": "",
+    "properties": {},
+    "id": "bubinga"
+  },
+  {
+    "nameDa": null,
+    "nameEn": "Tali",
+    "category": "tropical",
+    "imageUrl": "",
+    "properties": {},
+    "id": "tali"
+  },
+  {
+    "nameDa": null,
+    "nameEn": "Wengé",
+    "category": "tropical",
+    "imageUrl": "",
+    "properties": {},
+    "id": "wenge"
+  },
+  {
+    "nameDa": null,
+    "nameEn": "Zebrano",
+    "category": "tropical",
+    "imageUrl": "",
+    "properties": {},
+    "id": "zebrano"
+  },
+  {
+    "nameDa": null,
+    "nameEn": "Cumaru",
+    "category": "tropical",
+    "imageUrl": "",
+    "properties": {},
+    "id": "cumaru"
+  },
+  {
+    "nameDa": null,
+    "nameEn": "Ipé",
+    "category": "tropical",
+    "imageUrl": "",
+    "properties": {},
+    "id": "ipe"
+  },
+  {
+    "nameDa": null,
+    "nameEn": "Jatoba",
+    "category": "tropical",
+    "imageUrl": "",
+    "properties": {},
+    "id": "jatoba"
+  },
+  {
+    "nameDa": null,
+    "nameEn": "Afrormosia",
+    "category": "tropical",
+    "imageUrl": "",
+    "properties": {},
+    "id": "afrormosia"
+  },
+  {
+    "nameDa": null,
+    "nameEn": "Ayous",
+    "category": "tropical",
+    "imageUrl": "",
+    "properties": {},
+    "id": "ayous"
+  },
+  {
+    "nameDa": null,
+    "nameEn": "Bilinga",
+    "category": "tropical",
+    "imageUrl": "",
+    "properties": {},
+    "id": "bilinga"
+  },
+  {
+    "nameDa": null,
+    "nameEn": "Doussie",
+    "category": "tropical",
+    "imageUrl": "",
+    "properties": {},
+    "id": "doussie"
+  },
+  {
+    "nameDa": null,
+    "nameEn": "Iroko",
+    "category": "tropical",
+    "imageUrl": "",
+    "properties": {},
+    "id": "iroko"
+  },
+  {
+    "nameDa": null,
+    "nameEn": "Okan",
+    "category": "tropical",
+    "imageUrl": "",
+    "properties": {},
+    "id": "okan"
+  },
+  {
+    "nameDa": null,
+    "nameEn": "Mahogany, Sapele",
+    "category": "tropical",
+    "imageUrl": "",
+    "properties": {},
+    "id": "mahogany-sapele"
+  },
+  {
+    "nameDa": null,
+    "nameEn": "Okoume",
+    "category": "tropical",
+    "imageUrl": "",
+    "properties": {},
+    "id": "okoume"
+  },
+  {
+    "nameDa": null,
+    "nameEn": "Mahogany, Sipo",
+    "category": "tropical",
+    "imageUrl": "",
+    "properties": {},
+    "id": "mahogany-sipo"
+  },
+  {
+    "nameDa": null,
+    "nameEn": "Teak, Plantation",
+    "category": "tropical",
+    "imageUrl": "",
+    "properties": {},
+    "id": "teak-plantation"
+  }
+]
