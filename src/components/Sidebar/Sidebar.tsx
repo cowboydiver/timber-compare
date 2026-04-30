@@ -59,7 +59,7 @@ export function Sidebar({ woods }: Props) {
       </div>
       <ul>
         {filtered.map((w) => {
-          const name = language === 'da' ? w.nameDa : w.nameEn
+          const name = (language === 'da' ? w.nameDa : w.nameEn) ?? w.id
           const isSelected = selectedIds.includes(w.id)
           return (
             <li key={w.id} aria-selected={isSelected} onClick={() => toggleWood(w)}>

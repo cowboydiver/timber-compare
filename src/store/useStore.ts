@@ -22,7 +22,7 @@ interface StoreState {
   setScatterColor: (key: string) => void
 }
 
-export const useStore = create<StoreState>()((set, get) => ({
+export const useStore = create<StoreState>()((set) => ({
   selectedIds: [],
   activeTab: 'radar',
   language: 'en',

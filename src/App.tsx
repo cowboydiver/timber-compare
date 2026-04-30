@@ -14,7 +14,7 @@ export default function App() {
       <Header />
       <div className="app-body">
         <Sidebar woods={woods} />
-        <ChartPanel />
+        <ChartPanel woods={woods} />
       </div>
     </Layout>
   )
