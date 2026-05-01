@@ -20,7 +20,7 @@ const woods: Wood[] = [
 ]
 
 beforeEach(() => {
-  useStore.setState({ selectedIds: [], language: 'en', activeTab: 'radar', radarWarning: false })
+  useStore.setState({ selectedIds: [], activeTab: 'radar', radarWarning: false })
 })
 
 describe('WoodRadarChart', () => {

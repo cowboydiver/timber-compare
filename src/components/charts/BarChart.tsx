@@ -18,7 +18,6 @@ export function WoodBarChart({ woods }: Props) {
   const selectedIds = useStore((s) => s.selectedIds)
   const barProperty = useStore((s) => s.barProperty)
   const setBarProperty = useStore((s) => s.setBarProperty)
-  const language = useStore((s) => s.language)
 
   const numericKeys = getNumericProperties(woods)
   const effectiveProperty = barProperty || numericKeys[0] || ''
@@ -27,7 +26,7 @@ export function WoodBarChart({ woods }: Props) {
   const data = selectedWoods.map((w) => {
     const pv = w.properties[effectiveProperty]
     return {
-      name: (language === 'da' ? w.nameDa : w.nameEn) ?? w.id,
+      name: w.nameDa ?? w.id,
       value: pv?.type === 'numeric' ? pv.value : null,
     }
   })

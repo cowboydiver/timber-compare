@@ -5,7 +5,6 @@ beforeEach(() => {
   useStore.setState({
     selectedIds: [],
     activeTab: 'radar',
-    language: 'en',
     radarWarning: false,
     barProperty: '',
     scatterX: '',
@@ -45,15 +44,6 @@ describe('deselect', () => {
     useStore.getState().select('oak')
     useStore.getState().deselect('oak')
     expect(useStore.getState().selectedIds).not.toContain('oak')
-  })
-})
-
-describe('setLanguage', () => {
-  it('updates language without clearing selection', () => {
-    useStore.getState().select('oak')
-    useStore.getState().setLanguage('da')
-    expect(useStore.getState().language).toBe('da')
-    expect(useStore.getState().selectedIds).toContain('oak')
   })
 })
 

@@ -34,7 +34,6 @@ const woods: Wood[] = [
 beforeEach(() => {
   useStore.setState({
     selectedIds: ['oak', 'ash'],
-    language: 'en',
     activeTab: 'bar',
     barProperty: '',
   })

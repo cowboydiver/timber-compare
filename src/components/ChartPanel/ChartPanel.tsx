@@ -12,12 +12,10 @@ interface Props {
 const TABS = ['radar', 'bar', 'scatter'] as const
 
 export function ChartPanel({ woods }: Props) {
-  const language = useStore((s) => s.language)
   const activeTab = useStore((s) => s.activeTab)
   const setActiveTab = useStore((s) => s.setActiveTab)
-  const t = dict[language]
 
-  const tabLabels = { radar: t.radar, bar: t.bar, scatter: t.scatter }
+  const tabLabels = { radar: dict.radar, bar: dict.bar, scatter: dict.scatter }
 
   return (
     <section>

@@ -19,20 +19,20 @@ const woods: Wood[] = [
 ]
 
 beforeEach(() => {
-  useStore.setState({ selectedIds: ['oak'], language: 'en', activeTab: 'radar', radarWarning: false, barProperty: '', scatterX: '', scatterY: '', scatterColor: '' })
+  useStore.setState({ selectedIds: ['oak'], activeTab: 'radar', radarWarning: false, barProperty: '', scatterX: '', scatterY: '', scatterColor: '' })
 })
 
 describe('ChartPanel', () => {
   it('renders Radar, Bar and Scatter tabs', () => {
     render(<ChartPanel woods={woods} />)
-    expect(screen.getByRole('tab', { name: /radar/i })).toBeInTheDocument()
-    expect(screen.getByRole('tab', { name: /bar/i })).toBeInTheDocument()
-    expect(screen.getByRole('tab', { name: /scatter/i })).toBeInTheDocument()
+    expect(screen.getByRole('tab', { name: 'Radar' })).toBeInTheDocument()
+    expect(screen.getByRole('tab', { name: 'Søjle' })).toBeInTheDocument()
+    expect(screen.getByRole('tab', { name: 'Punktdiagram' })).toBeInTheDocument()
   })
 
   it('clicking a tab updates activeTab in store', () => {
     render(<ChartPanel woods={woods} />)
-    fireEvent.click(screen.getByRole('tab', { name: /bar/i }))
+    fireEvent.click(screen.getByRole('tab', { name: 'Søjle' }))
     expect(useStore.getState().activeTab).toBe('bar')
   })
 

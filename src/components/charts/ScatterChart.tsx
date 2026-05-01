@@ -22,7 +22,6 @@ export function WoodScatterChart({ woods }: Props) {
   const setScatterX = useStore((s) => s.setScatterX)
   const setScatterY = useStore((s) => s.setScatterY)
   const setScatterColor = useStore((s) => s.setScatterColor)
-  const language = useStore((s) => s.language)
 
   const numericKeys = getNumericProperties(woods)
   const nominalKeys = getNominalProperties(woods)
@@ -40,7 +39,7 @@ export function WoodScatterChart({ woods }: Props) {
     return [{
       x: xv.value,
       y: yv.value,
-      name: (language === 'da' ? w.nameDa : w.nameEn) ?? w.id,
+      name: w.nameDa ?? w.id,
       imageUrl: w.imageUrl,
     }]
   })

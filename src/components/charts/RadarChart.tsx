@@ -20,8 +20,6 @@ const COLORS = ['#8B6914', '#5C8A3C', '#2E6B8A', '#8A3C2E', '#6B2E8A', '#2E8A6B'
 export function WoodRadarChart({ woods }: Props) {
   const radarWarning = useStore((s) => s.radarWarning)
   const selectedIds = useStore((s) => s.selectedIds)
-  const language = useStore((s) => s.language)
-  const t = dict[language]
 
   const numericKeys = getNumericProperties(woods)
   const selectedWoods = woods
@@ -39,7 +37,7 @@ export function WoodRadarChart({ woods }: Props) {
 
   return (
     <div>
-      {radarWarning && <p role="alert">{t.radarWarning}</p>}
+      {radarWarning && <p role="alert">{dict.radarWarning}</p>}
       <ResponsiveContainer width="100%" height={400}>
         <RadarChart data={data}>
           <PolarGrid />
@@ -47,7 +45,7 @@ export function WoodRadarChart({ woods }: Props) {
           {selectedWoods.map((w, i) => (
             <Radar
               key={w.id}
-              name={(language === 'da' ? w.nameDa : w.nameEn) ?? w.id}
+              name={w.nameDa ?? w.id}
               dataKey={w.id}
               stroke={COLORS[i]}
               fill={COLORS[i]}

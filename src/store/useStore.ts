@@ -1,12 +1,10 @@
 import { create } from 'zustand'
-import type { Language } from '../i18n/dictionary'
 
 type Tab = 'radar' | 'bar' | 'scatter'
 
 interface StoreState {
   selectedIds: string[]
   activeTab: Tab
-  language: Language
   radarWarning: boolean
   barProperty: string
   scatterX: string
@@ -14,7 +12,6 @@ interface StoreState {
   scatterColor: string
   select: (id: string) => void
   deselect: (id: string) => void
-  setLanguage: (lang: Language) => void
   setActiveTab: (tab: Tab) => void
   setBarProperty: (key: string) => void
   setScatterX: (key: string) => void
@@ -25,7 +22,6 @@ interface StoreState {
 export const useStore = create<StoreState>()((set) => ({
   selectedIds: [],
   activeTab: 'radar',
-  language: 'en',
   radarWarning: false,
   barProperty: '',
   scatterX: '',
@@ -40,8 +36,6 @@ export const useStore = create<StoreState>()((set) => ({
   }),
 
   deselect: (id: string) => set((s) => ({ selectedIds: s.selectedIds.filter((x) => x !== id) })),
-
-  setLanguage: (lang: Language) => set({ language: lang }),
 
   setActiveTab: (tab: Tab) => set((s) => ({
     activeTab: tab,
