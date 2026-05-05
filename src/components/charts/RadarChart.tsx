@@ -18,8 +18,8 @@ interface Props {
 }
 
 export function WoodRadarChart({ woods }: Props) {
-  const radarWarning = useStore((s) => s.radarWarning)
   const selectedIds = useStore((s) => s.selectedIds)
+  const radarWarning = selectedIds.length > 6
 
   const numericKeys = getNumericProperties(woods)
   const selectedWoods = woods
@@ -41,7 +41,7 @@ export function WoodRadarChart({ woods }: Props) {
 
   return (
     <div>
-      {radarWarning && <p role="alert">{dict.radarWarning}</p>}
+      {radarWarning && <p role="status">{dict.radarWarning}</p>}
       <ResponsiveContainer width="100%" height={420}>
         <RadarChart data={data}>
           <PolarGrid stroke="var(--color-muted-decoration)" />

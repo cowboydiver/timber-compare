@@ -5,7 +5,6 @@ beforeEach(() => {
   useStore.setState({
     selectedIds: [],
     activeTab: 'radar',
-    radarWarning: false,
     barProperty: '',
     scatterX: '',
     scatterY: '',
@@ -24,19 +23,6 @@ describe('select', () => {
     useStore.getState().select('oak')
     expect(useStore.getState().selectedIds.filter((id) => id === 'oak')).toHaveLength(1)
   })
-
-  it('sets radarWarning when a 7th wood is selected on radar tab', () => {
-    ;['a', 'b', 'c', 'd', 'e', 'f'].forEach((id) => useStore.getState().select(id))
-    expect(useStore.getState().radarWarning).toBe(false)
-    useStore.getState().select('g')
-    expect(useStore.getState().radarWarning).toBe(true)
-  })
-
-  it('does not set radarWarning when tab is not radar', () => {
-    useStore.setState({ activeTab: 'bar' })
-    ;['a', 'b', 'c', 'd', 'e', 'f', 'g'].forEach((id) => useStore.getState().select(id))
-    expect(useStore.getState().radarWarning).toBe(false)
-  })
 })
 
 describe('deselect', () => {
@@ -47,16 +33,19 @@ describe('deselect', () => {
   })
 })
 
+describe('clearSelection', () => {
+  it('empties selectedIds', () => {
+    useStore.getState().select('oak')
+    useStore.getState().select('teak')
+    useStore.getState().clearSelection()
+    expect(useStore.getState().selectedIds).toHaveLength(0)
+  })
+})
+
 describe('setActiveTab', () => {
   it('updates activeTab', () => {
     useStore.getState().setActiveTab('bar')
     expect(useStore.getState().activeTab).toBe('bar')
-  })
-
-  it('clears radarWarning when switching away from radar with ≤6 selected', () => {
-    useStore.setState({ radarWarning: true, selectedIds: ['a', 'b'], activeTab: 'radar' })
-    useStore.getState().setActiveTab('bar')
-    expect(useStore.getState().radarWarning).toBe(false)
   })
 })
 

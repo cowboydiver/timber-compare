@@ -18,15 +18,16 @@ export const dict = {
   axisX: 'X-akse',
   axisY: 'Y-akse',
   color: 'Farve',
-  propertyLabels: {
-    weight: 'Vægt (kg/m³)',
-    janka_hardness: 'Janka hårdhed',
-    modulus_of_elasticity: 'Elasticitetsmodul (GPa)',
-    modulus_of_rupture: 'Bøjningsmodul (MPa)',
-    bending_strength: 'Bøjningsstyrke',
-    moisture_content: 'Fugtindhold',
-    shrinkage: 'Svind',
-    botanical_name: 'Botanisk navn',
-    origin: 'Oprindelse',
-  } as Record<string, string>,
 } as const
+
+export const propertyLabels: Record<string, string> = {
+  weight: 'Vægt (kg/m³)',
+  janka_hardness: 'Janka hårdhed',
+  modulus_of_elasticity: 'Elasticitetsmodul (GPa)',
+  modulus_of_rupture: 'Bøjningsmodul (MPa)',
+  bending_strength: 'Bøjningsstyrke',
+  moisture_content: 'Fugtindhold',
+  shrinkage: 'Svind',
+  botanical_name: 'Botanisk navn',
+  origin: 'Oprindelse',
+}

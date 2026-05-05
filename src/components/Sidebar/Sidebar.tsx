@@ -46,7 +46,6 @@ export function Sidebar({ woods }: Props) {
         </div>
       )}
       <input
-        role="searchbox"
         type="search"
         placeholder={dict.searchPlaceholder}
         value={search}

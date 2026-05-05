@@ -19,7 +19,7 @@ const woods: Wood[] = [
 ]
 
 beforeEach(() => {
-  useStore.setState({ selectedIds: ['oak'], activeTab: 'radar', radarWarning: false, barProperty: '', scatterX: '', scatterY: '', scatterColor: '' })
+  useStore.setState({ selectedIds: ['oak'], activeTab: 'radar', barProperty: '', scatterX: '', scatterY: '', scatterColor: '' })
 })
 
 describe('ChartPanel', () => {
