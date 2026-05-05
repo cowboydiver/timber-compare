@@ -43,8 +43,8 @@ export function WoodRadarChart({ woods }: Props) {
       {radarWarning && <p role="alert">{dict.radarWarning}</p>}
       <ResponsiveContainer width="100%" height={420}>
         <RadarChart data={data}>
-          <PolarGrid stroke="#c6c4b3" />
-          <PolarAngleAxis dataKey="property" tick={{ fontSize: 11, fill: '#86968f' }} />
+          <PolarGrid stroke="var(--color-muted-decoration)" />
+          <PolarAngleAxis dataKey="property" tick={{ fontSize: 11, fill: 'var(--color-text-muted)' }} />
           {selectedWoods.map((w, i) => (
             <Radar
               key={w.id}
