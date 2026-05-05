@@ -8,7 +8,10 @@ export const dict = {
   bar: 'Søjle',
   scatter: 'Punktdiagram',
   desktopOnly: 'Dette værktøj er bedst på en større skærm.',
+  desktopOnlyHint: 'Anbefalet bredde: 1024 px eller mere.',
   chartPlaceholder: 'Vælg træsorter fra listen for at se diagrammer.',
   radarWarning: 'Radaret viser maks. 6 træsorter.',
   logoLink: 'https://www.globaltimber.dk',
+  woodList: 'Træsorter',
+  noResults: 'Ingen træsorter matcher din søgning.',
 } as const

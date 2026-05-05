@@ -1,8 +1,22 @@
-import { describe, it, expect, beforeEach } from 'vitest'
+import { describe, it, expect, beforeEach, vi } from 'vitest'
 import { render, screen, fireEvent } from '@testing-library/react'
 import { WoodScatterChart } from './ScatterChart'
 import { useStore } from '../../store/useStore'
 import type { Wood } from '../../data/types'
+
+vi.mock('recharts', async () => {
+  const actual = await vi.importActual<typeof import('recharts')>('recharts')
+  return {
+    ...actual,
+    ResponsiveContainer: ({ children }: { children: React.ReactNode }) => <div>{children}</div>,
+    ScatterChart: ({ children }: { children: React.ReactNode }) => <div>{children}</div>,
+    Scatter: ({ name }: { name?: string }) => <div data-testid="scatter-group">{name}</div>,
+    XAxis: () => null,
+    YAxis: () => null,
+    Tooltip: () => null,
+    Legend: () => null,
+  }
+})
 
 const woods: Wood[] = [
   {
@@ -65,5 +79,14 @@ describe('WoodScatterChart', () => {
     render(<WoodScatterChart woods={woods} />)
     fireEvent.change(screen.getByLabelText(/farve/i), { target: { value: 'origin' } })
     expect(useStore.getState().scatterColor).toBe('origin')
+  })
+
+  it('renders one scatter group per distinct color value among selected woods', () => {
+    useStore.setState({ scatterColor: 'origin' })
+    render(<WoodScatterChart woods={woods} />)
+    const groups = screen.getAllByTestId('scatter-group')
+    const names = groups.map((g) => g.textContent)
+    expect(names).toContain('Europe')
+    expect(names).toContain('Asia')
   })
 })

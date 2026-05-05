@@ -53,11 +53,26 @@ export function Sidebar({ woods }: Props) {
           </button>
         ))}
       </div>
-      <ul>
+      <ul role="listbox" aria-multiselectable="true" aria-label={dict.woodList}>
+        {filtered.length === 0 && (
+          <li className="no-results">{dict.noResults}</li>
+        )}
         {filtered.map((w) => {
           const isSelected = selectedIds.includes(w.id)
           return (
-            <li key={w.id} aria-selected={isSelected} onClick={() => toggleWood(w)}>
+            <li
+              key={w.id}
+              role="option"
+              aria-selected={isSelected}
+              tabIndex={0}
+              onClick={() => toggleWood(w)}
+              onKeyDown={(e) => {
+                if (e.key === 'Enter' || e.key === ' ') {
+                  e.preventDefault()
+                  toggleWood(w)
+                }
+              }}
+            >
               {w.imageUrl && <img src={w.imageUrl} alt="" />}
               <span>{w.nameDa ?? w.id}</span>
             </li>

@@ -9,7 +9,11 @@ export function Layout({ children }: Props) {
     <>
       <div className="desktop-only">{children}</div>
       <div className="mobile-message">
-        <p>{dict.desktopOnly}</p>
+        <div className="mobile-card">
+          <img src="/logo.svg" alt="Global Timber" />
+          <p>{dict.desktopOnly}</p>
+          <p className="mobile-hint">{dict.desktopOnlyHint}</p>
+        </div>
       </div>
     </>
   )

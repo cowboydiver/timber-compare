@@ -47,4 +47,22 @@ describe('ChartPanel', () => {
     render(<ChartPanel woods={woods} />)
     expect(screen.getByLabelText(/x.akse/i)).toBeInTheDocument()
   })
+
+  it('ArrowRight moves focus to next tab and activates it', () => {
+    render(<ChartPanel woods={woods} />)
+    const radarTab = screen.getByRole('tab', { name: 'Radar' })
+    radarTab.focus()
+    fireEvent.keyDown(radarTab, { key: 'ArrowRight' })
+    expect(useStore.getState().activeTab).toBe('bar')
+    expect(screen.getByRole('tab', { name: 'Søjle' })).toHaveFocus()
+  })
+
+  it('ArrowLeft wraps from first tab to last tab', () => {
+    render(<ChartPanel woods={woods} />)
+    const radarTab = screen.getByRole('tab', { name: 'Radar' })
+    radarTab.focus()
+    fireEvent.keyDown(radarTab, { key: 'ArrowLeft' })
+    expect(useStore.getState().activeTab).toBe('scatter')
+    expect(screen.getByRole('tab', { name: 'Punktdiagram' })).toHaveFocus()
+  })
 })
