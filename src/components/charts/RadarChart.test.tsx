@@ -25,7 +25,7 @@ beforeEach(() => {
 
 describe('WoodRadarChart', () => {
   it('shows radar warning banner when radarWarning is true', () => {
-    useStore.setState({ radarWarning: true })
+    useStore.setState({ selectedIds: ['oak'], radarWarning: true })
     render(<WoodRadarChart woods={woods} />)
     expect(screen.getByRole('alert')).toBeInTheDocument()
   })

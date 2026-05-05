@@ -15,7 +15,7 @@ interface Props {
   woods: Wood[]
 }
 
-const COLORS = ['#8B6914', '#5C8A3C', '#2E6B8A', '#8A3C2E', '#6B2E8A', '#2E8A6B']
+const COLORS = ['#3c453b', '#987f67', '#86968f', '#3f342f', '#c6a882', '#5a6e5a']
 
 export function WoodRadarChart({ woods }: Props) {
   const radarWarning = useStore((s) => s.radarWarning)
@@ -25,6 +25,10 @@ export function WoodRadarChart({ woods }: Props) {
   const selectedWoods = woods
     .filter((w) => selectedIds.includes(w.id))
     .slice(0, 6)
+
+  if (selectedIds.length === 0) {
+    return <p className="chart-empty">{dict.chartPlaceholder}</p>
+  }
 
   const data = numericKeys.map((key) => {
     const entry: Record<string, string | number> = { property: key }
@@ -38,10 +42,10 @@ export function WoodRadarChart({ woods }: Props) {
   return (
     <div>
       {radarWarning && <p role="alert">{dict.radarWarning}</p>}
-      <ResponsiveContainer width="100%" height={400}>
+      <ResponsiveContainer width="100%" height={420}>
         <RadarChart data={data}>
-          <PolarGrid />
-          <PolarAngleAxis dataKey="property" />
+          <PolarGrid stroke="#c6c4b3" />
+          <PolarAngleAxis dataKey="property" tick={{ fontSize: 11, fill: '#86968f' }} />
           {selectedWoods.map((w, i) => (
             <Radar
               key={w.id}
@@ -49,10 +53,10 @@ export function WoodRadarChart({ woods }: Props) {
               dataKey={w.id}
               stroke={COLORS[i]}
               fill={COLORS[i]}
-              fillOpacity={0.2}
+              fillOpacity={0.15}
             />
           ))}
-          <Legend />
+          <Legend wrapperStyle={{ fontSize: '12px' }} />
         </RadarChart>
       </ResponsiveContainer>
     </div>

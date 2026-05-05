@@ -44,26 +44,26 @@ beforeEach(() => {
 describe('WoodScatterChart', () => {
   it('renders X-axis, Y-axis, and color dropdowns', () => {
     render(<WoodScatterChart woods={woods} />)
-    expect(screen.getByLabelText(/x.axis/i)).toBeInTheDocument()
-    expect(screen.getByLabelText(/y.axis/i)).toBeInTheDocument()
-    expect(screen.getByLabelText(/color/i)).toBeInTheDocument()
+    expect(screen.getByLabelText(/x.akse/i)).toBeInTheDocument()
+    expect(screen.getByLabelText(/y.akse/i)).toBeInTheDocument()
+    expect(screen.getByLabelText(/farve/i)).toBeInTheDocument()
   })
 
   it('changing X dropdown updates scatterX in store', () => {
     render(<WoodScatterChart woods={woods} />)
-    fireEvent.change(screen.getByLabelText(/x.axis/i), { target: { value: 'janka_hardness' } })
+    fireEvent.change(screen.getByLabelText(/x.akse/i), { target: { value: 'janka_hardness' } })
     expect(useStore.getState().scatterX).toBe('janka_hardness')
   })
 
   it('changing Y dropdown updates scatterY in store', () => {
     render(<WoodScatterChart woods={woods} />)
-    fireEvent.change(screen.getByLabelText(/y.axis/i), { target: { value: 'weight' } })
+    fireEvent.change(screen.getByLabelText(/y.akse/i), { target: { value: 'weight' } })
     expect(useStore.getState().scatterY).toBe('weight')
   })
 
   it('changing color dropdown updates scatterColor in store', () => {
     render(<WoodScatterChart woods={woods} />)
-    fireEvent.change(screen.getByLabelText(/color/i), { target: { value: 'origin' } })
+    fireEvent.change(screen.getByLabelText(/farve/i), { target: { value: 'origin' } })
     expect(useStore.getState().scatterColor).toBe('origin')
   })
 })

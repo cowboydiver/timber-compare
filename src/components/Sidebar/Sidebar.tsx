@@ -42,7 +42,7 @@ export function Sidebar({ woods }: Props) {
         value={search}
         onChange={(e) => setSearch(e.target.value)}
       />
-      <div>
+      <div className="category-filters">
         {CATEGORIES.map(({ key, label }) => (
           <button
             key={key}

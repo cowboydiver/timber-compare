@@ -45,6 +45,6 @@ describe('ChartPanel', () => {
   it('shows X-axis dropdown when scatter tab is active', () => {
     useStore.setState({ activeTab: 'scatter' })
     render(<ChartPanel woods={woods} />)
-    expect(screen.getByLabelText(/x.axis/i)).toBeInTheDocument()
+    expect(screen.getByLabelText(/x.akse/i)).toBeInTheDocument()
   })
 })
