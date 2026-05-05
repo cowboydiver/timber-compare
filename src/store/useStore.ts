@@ -12,6 +12,7 @@ interface StoreState {
   scatterColor: string
   select: (id: string) => void
   deselect: (id: string) => void
+  clearSelection: () => void
   setActiveTab: (tab: Tab) => void
   setBarProperty: (key: string) => void
   setScatterX: (key: string) => void
@@ -36,6 +37,8 @@ export const useStore = create<StoreState>()((set) => ({
   }),
 
   deselect: (id: string) => set((s) => ({ selectedIds: s.selectedIds.filter((x) => x !== id) })),
+
+  clearSelection: () => set({ selectedIds: [] }),
 
   setActiveTab: (tab: Tab) => set((s) => ({
     activeTab: tab,

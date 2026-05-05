@@ -3,11 +3,12 @@ import {
   Radar,
   PolarGrid,
   PolarAngleAxis,
+  PolarRadiusAxis,
   ResponsiveContainer,
   Legend,
 } from 'recharts'
 import { useStore } from '../../store/useStore'
-import { getNumericProperties } from '../../data/utils'
+import { getNumericProperties, propertyLabel } from '../../data/utils'
 import { dict } from '../../i18n/dictionary'
 import { COLORS } from './palette'
 import type { Wood } from '../../data/types'
@@ -30,7 +31,7 @@ export function WoodRadarChart({ woods }: Props) {
   }
 
   const data = numericKeys.map((key) => {
-    const entry: Record<string, string | number> = { property: key }
+    const entry: Record<string, string | number> = { property: propertyLabel(key) }
     for (const w of selectedWoods) {
       const pv = w.properties[key]
       entry[w.id] = pv?.type === 'numeric' ? pv.value : 0
@@ -45,6 +46,7 @@ export function WoodRadarChart({ woods }: Props) {
         <RadarChart data={data}>
           <PolarGrid stroke="var(--color-muted-decoration)" />
           <PolarAngleAxis dataKey="property" tick={{ fontSize: 11, fill: 'var(--color-text-muted)' }} />
+          <PolarRadiusAxis angle={30} tick={{ fontSize: 10, fill: 'var(--color-muted-decoration)' }} />
           {selectedWoods.map((w, i) => (
             <Radar
               key={w.id}

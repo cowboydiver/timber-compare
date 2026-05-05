@@ -89,6 +89,41 @@ aside {
   overflow-y: auto;
 }
 
+.selection-count {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.5rem 0.75rem;
+  font-size: 0.8rem;
+  color: var(--color-text-muted);
+  border-bottom: 1px solid var(--color-sand-light);
+}
+
+.clear-btn {
+  padding: 0.2rem 0.5rem;
+  font-size: 0.75rem;
+  border: 1px solid var(--color-border);
+  border-radius: 2px;
+  background: var(--color-bg);
+  color: var(--color-text-muted);
+  cursor: pointer;
+}
+
+.clear-btn:hover {
+  border-color: var(--color-accent);
+  color: var(--color-secondary);
+}
+
+.radar-overflow-badge {
+  margin-left: auto;
+  font-size: 0.7rem;
+  color: var(--color-accent);
+  border: 1px solid var(--color-accent);
+  border-radius: 2px;
+  padding: 0.1rem 0.35rem;
+  white-space: nowrap;
+}
+
 aside input[type='search'] {
   margin: 0.75rem;
   padding: 0.45rem 0.75rem;
@@ -292,6 +327,13 @@ section {
   border-radius: 3px;
   font-size: 0.8rem;
   color: #7a5c1e;
+}
+
+/* ── Chart footnote ─────────────────────────────────────────────────── */
+.chart-footnote {
+  margin-top: 0.5rem;
+  font-size: 0.78rem;
+  color: var(--color-text-muted);
 }
 
 /* ── Empty state ─────────────────────────────────────────────────────── */

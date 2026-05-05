@@ -17,8 +17,10 @@ const CATEGORIES: Array<{ key: Category | 'all'; label: keyof typeof dict }> = [
 
 export function Sidebar({ woods }: Props) {
   const selectedIds = useStore((s) => s.selectedIds)
+  const activeTab = useStore((s) => s.activeTab)
   const select = useStore((s) => s.select)
   const deselect = useStore((s) => s.deselect)
+  const clearSelection = useStore((s) => s.clearSelection)
 
   const [search, setSearch] = useState('')
   const [category, setCategory] = useState<Category | undefined>(undefined)
@@ -33,8 +35,16 @@ export function Sidebar({ woods }: Props) {
     else select(w.id)
   }
 
+  const radarOverflowStart = activeTab === 'radar' ? 6 : Infinity
+
   return (
     <aside>
+      {selectedIds.length > 0 && (
+        <div className="selection-count">
+          <span>{selectedIds.length} valgt</span>
+          <button onClick={clearSelection} className="clear-btn">Ryd</button>
+        </div>
+      )}
       <input
         role="searchbox"
         type="search"
@@ -59,6 +69,8 @@ export function Sidebar({ woods }: Props) {
         )}
         {filtered.map((w) => {
           const isSelected = selectedIds.includes(w.id)
+          const selectedRank = selectedIds.indexOf(w.id)
+          const isHiddenByRadarCap = isSelected && selectedRank >= radarOverflowStart
           return (
             <li
               key={w.id}
@@ -75,6 +87,7 @@ export function Sidebar({ woods }: Props) {
             >
               {w.imageUrl && <img src={w.imageUrl} alt="" />}
               <span>{w.nameDa ?? w.id}</span>
+              {isHiddenByRadarCap && <span className="radar-overflow-badge">ikke vist</span>}
             </li>
           )
         })}

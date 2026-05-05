@@ -5,10 +5,11 @@ import {
   YAxis,
   Tooltip,
   Legend,
+  CartesianGrid,
   ResponsiveContainer,
 } from 'recharts'
 import { useStore } from '../../store/useStore'
-import { getNumericProperties, getNominalProperties } from '../../data/utils'
+import { getNumericProperties, getNominalProperties, propertyLabel } from '../../data/utils'
 import { dict } from '../../i18n/dictionary'
 import { COLORS } from './palette'
 import type { Wood } from '../../data/types'
@@ -102,47 +103,48 @@ export function WoodScatterChart({ woods }: Props) {
   return (
     <div>
       <div className="chart-controls">
-        <label htmlFor="scatter-x">X-akse</label>
+        <label htmlFor="scatter-x">{dict.axisX}</label>
         <select
           id="scatter-x"
           value={effectiveX}
           onChange={(e) => setScatterX(e.target.value)}
         >
           {numericKeys.map((key) => (
-            <option key={key} value={key}>{key}</option>
+            <option key={key} value={key}>{propertyLabel(key)}</option>
           ))}
         </select>
 
-        <label htmlFor="scatter-y">Y-akse</label>
+        <label htmlFor="scatter-y">{dict.axisY}</label>
         <select
           id="scatter-y"
           value={effectiveY}
           onChange={(e) => setScatterY(e.target.value)}
         >
           {numericKeys.map((key) => (
-            <option key={key} value={key}>{key}</option>
+            <option key={key} value={key}>{propertyLabel(key)}</option>
           ))}
         </select>
 
         {nominalKeys.length > 0 && (
           <>
-            <label htmlFor="scatter-color">Farve</label>
+            <label htmlFor="scatter-color">{dict.color}</label>
             <select
               id="scatter-color"
               value={effectiveColor}
               onChange={(e) => setScatterColor(e.target.value)}
             >
               {nominalKeys.map((key) => (
-                <option key={key} value={key}>{key}</option>
+                <option key={key} value={key}>{propertyLabel(key)}</option>
               ))}
             </select>
           </>
         )}
       </div>
       <ResponsiveContainer width="100%" height={400}>
-        <ScatterChart margin={{ top: 4, right: 24, left: 0, bottom: 4 }}>
-          <XAxis dataKey="x" name={effectiveX} tick={{ fontSize: 11, fill: 'var(--color-text-muted)' }} label={{ value: effectiveX, position: 'insideBottom', offset: -4, fontSize: 11, fill: 'var(--color-text-muted)' }} />
-          <YAxis dataKey="y" name={effectiveY} tick={{ fontSize: 11, fill: 'var(--color-text-muted)' }} label={{ value: effectiveY, angle: -90, position: 'insideLeft', fontSize: 11, fill: 'var(--color-text-muted)' }} />
+        <ScatterChart margin={{ top: 4, right: 24, left: 24, bottom: 4 }}>
+          <CartesianGrid stroke="var(--color-muted-decoration)" />
+          <XAxis dataKey="x" name={effectiveX} tick={{ fontSize: 11, fill: 'var(--color-text-muted)' }} label={{ value: propertyLabel(effectiveX), position: 'insideBottom', offset: -4, fontSize: 11, fill: 'var(--color-text-muted)' }} />
+          <YAxis dataKey="y" name={effectiveY} tick={{ fontSize: 11, fill: 'var(--color-text-muted)' }} label={{ value: propertyLabel(effectiveY), angle: -90, position: 'insideLeft', fontSize: 11, fill: 'var(--color-text-muted)' }} />
           <Tooltip
             content={({ payload }) => {
               if (!payload?.length) return null
@@ -151,9 +153,9 @@ export function WoodScatterChart({ woods }: Props) {
                 <div style={{ background: '#fff', border: '1px solid #c6c4b3', borderRadius: 3, padding: '8px 10px', fontSize: 12 }}>
                   {d.imageUrl && <img src={d.imageUrl} alt={d.name} width={56} style={{ display: 'block', marginBottom: 6, borderRadius: 2 }} />}
                   <strong style={{ color: '#3c453b' }}>{d.name}</strong>
-                  <div style={{ color: 'var(--color-text-muted)', marginTop: 4 }}>{effectiveX}: {d.x}</div>
-                  <div style={{ color: 'var(--color-text-muted)' }}>{effectiveY}: {d.y}</div>
-                  {d.colorGroup && <div style={{ color: 'var(--color-text-muted)' }}>{effectiveColor}: {d.colorGroup}</div>}
+                  <div style={{ color: 'var(--color-text-muted)', marginTop: 4 }}>{propertyLabel(effectiveX)}: {d.x}</div>
+                  <div style={{ color: 'var(--color-text-muted)' }}>{propertyLabel(effectiveY)}: {d.y}</div>
+                  {d.colorGroup && <div style={{ color: 'var(--color-text-muted)' }}>{propertyLabel(effectiveColor)}: {d.colorGroup}</div>}
                 </div>
               )
             }}
