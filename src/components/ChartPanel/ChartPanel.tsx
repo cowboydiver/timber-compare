@@ -1,15 +1,21 @@
 import { useStore } from '../../store/useStore'
 import { dict } from '../../i18n/dictionary'
+import { WoodRadarChart } from '../charts/RadarChart'
+import { WoodBarChart } from '../charts/BarChart'
+import { WoodScatterChart } from '../charts/ScatterChart'
+import type { Wood } from '../../data/types'
+
+interface Props {
+  woods: Wood[]
+}
 
 const TABS = ['radar', 'bar', 'scatter'] as const
 
-export function ChartPanel() {
-  const language = useStore((s) => s.language)
+export function ChartPanel({ woods }: Props) {
   const activeTab = useStore((s) => s.activeTab)
   const setActiveTab = useStore((s) => s.setActiveTab)
-  const t = dict[language]
 
-  const tabLabels = { radar: t.radar, bar: t.bar, scatter: t.scatter }
+  const tabLabels = { radar: dict.radar, bar: dict.bar, scatter: dict.scatter }
 
   return (
     <section>
@@ -26,7 +32,9 @@ export function ChartPanel() {
         ))}
       </div>
       <div role="tabpanel">
-        <p>{t.chartPlaceholder}</p>
+        {activeTab === 'radar' && <WoodRadarChart woods={woods} />}
+        {activeTab === 'bar' && <WoodBarChart woods={woods} />}
+        {activeTab === 'scatter' && <WoodScatterChart woods={woods} />}
       </div>
     </section>
   )

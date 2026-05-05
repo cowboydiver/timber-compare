@@ -1,0 +1,38 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(/opt/homebrew/bin/gh issue view *)",
+      "Bash(/opt/homebrew/bin/gh issue list *)",
+      "Bash(/opt/homebrew/bin/gh issue create *)",
+      "Bash(/opt/homebrew/bin/gh repo view *)",
+      "Bash(git init)",
+      "Bash(git commit *)",
+      "Bash(git add *)",
+      "Bash(git remote *)",
+      "Bash(git push *)",
+      "Bash(gh repo create *)",
+      "Bash(gh repo edit *)",
+      "Bash(gh issue create *)",
+      "Bash(gh issue close *)",
+      "Bash(gh issue view *)",
+      "Bash(gh issue list *)",
+      "Bash(mkdir *)",
+      "Bash(npm test)",
+      "Bash(npm test *)",
+      "Bash(npm run test*)",
+      "Bash(npx vitest *)"
+    ]
+  },
+  "sandbox": {
+    "network": {
+      "allowedDomains": [
+        "github.com",
+        "api.github.com",
+        "raw.githubusercontent.com"
+      ],
+      "allowMachLookup": [
+        "com.apple.trustd.agent"
+      ]
+    }
+  }
+}

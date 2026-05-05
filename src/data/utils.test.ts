@@ -56,10 +56,6 @@ describe('filterWoods', () => {
     expect(filterWoods([oak, teak, walnut], { search: 'eg' })).toEqual([oak])
   })
 
-  it('filters by search matching nameEn (case-insensitive)', () => {
-    expect(filterWoods([oak, teak, walnut], { search: 'WAL' })).toEqual([walnut])
-  })
-
   it('applies search and category together', () => {
     expect(filterWoods([oak, teak, walnut], { search: 'teak', category: 'tropical' })).toEqual([teak])
   })

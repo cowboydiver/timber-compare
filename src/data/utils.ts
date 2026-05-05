@@ -8,7 +8,7 @@ export function filterWoods(
     if (category && w.category !== category) return false
     if (search) {
       const q = search.toLowerCase()
-      if (!w.nameDa.toLowerCase().includes(q) && !w.nameEn.toLowerCase().includes(q)) return false
+      if (!(w.nameDa?.toLowerCase().includes(q) ?? false)) return false
     }
     return true
   })

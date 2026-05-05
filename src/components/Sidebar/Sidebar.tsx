@@ -2,14 +2,13 @@ import { useState } from 'react'
 import { useStore } from '../../store/useStore'
 import { filterWoods } from '../../data/utils'
 import { dict } from '../../i18n/dictionary'
-import type { Category } from '../../data/types'
-import type { Wood } from '../../data/types'
+import type { Category, Wood } from '../../data/types'
 
 interface Props {
   woods: Wood[]
 }
 
-const CATEGORIES: Array<{ key: Category | 'all'; label: keyof typeof dict.en }> = [
+const CATEGORIES: Array<{ key: Category | 'all'; label: keyof typeof dict }> = [
   { key: 'all', label: 'all' },
   { key: 'american', label: 'american' },
   { key: 'european', label: 'european' },
@@ -17,15 +16,12 @@ const CATEGORIES: Array<{ key: Category | 'all'; label: keyof typeof dict.en }> 
 ]
 
 export function Sidebar({ woods }: Props) {
-  const language = useStore((s) => s.language)
   const selectedIds = useStore((s) => s.selectedIds)
   const select = useStore((s) => s.select)
   const deselect = useStore((s) => s.deselect)
 
   const [search, setSearch] = useState('')
   const [category, setCategory] = useState<Category | undefined>(undefined)
-
-  const t = dict[language]
 
   const filtered = filterWoods(woods, {
     search: search || undefined,
@@ -42,7 +38,7 @@ export function Sidebar({ woods }: Props) {
       <input
         role="searchbox"
         type="search"
-        placeholder={t.searchPlaceholder}
+        placeholder={dict.searchPlaceholder}
         value={search}
         onChange={(e) => setSearch(e.target.value)}
       />
@@ -53,18 +49,17 @@ export function Sidebar({ woods }: Props) {
             onClick={() => setCategory(key === 'all' ? undefined : key)}
             aria-pressed={key === 'all' ? !category : category === key}
           >
-            {t[label]}
+            {dict[label]}
           </button>
         ))}
       </div>
       <ul>
         {filtered.map((w) => {
-          const name = language === 'da' ? w.nameDa : w.nameEn
           const isSelected = selectedIds.includes(w.id)
           return (
             <li key={w.id} aria-selected={isSelected} onClick={() => toggleWood(w)}>
               {w.imageUrl && <img src={w.imageUrl} alt="" />}
-              <span>{name}</span>
+              <span>{w.nameDa ?? w.id}</span>
             </li>
           )
         })}

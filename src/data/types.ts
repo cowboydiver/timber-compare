@@ -7,8 +7,8 @@ export type PropertyValue =
 
 export interface Wood {
   id: string
-  nameDa: string
-  nameEn: string
+  nameDa: string | null
+  nameEn: string | null
   category: Category
   imageUrl: string
   properties: Record<string, PropertyValue>
