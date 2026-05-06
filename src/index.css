@@ -1,21 +1,21 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@300;400;500;600&display=swap');
 
 :root {
-  --color-primary:       #3c453b;
-  --color-primary-50:    rgba(60, 69, 59, 0.5);
-  --color-secondary:     #3f342f;
-  --color-accent:        #987f67;
-  --color-accent-light:  #b89e87;
-  --color-muted:         #86968f;
-  --color-sand:          #c6c4b3;
-  --color-sand-light:    #e8e6d8;
-  --color-bg:            #fefefe;
-  --color-bg-subtle:     #f5f4ef;
-  --color-text:          #3c453b;
-  --color-text-muted:    #5e6f68;
-  --color-muted-decoration: #86968f;
-  --color-border:        #c6c4b3;
-  --color-selected-bg:   #ede9df;
+  --color-primary:         #3c453b;
+  --color-secondary:       #3f342f;
+  --color-accent:          #987f67;
+  --color-accent-light:    #b89e87;
+  --color-muted:           #86968f;
+  --color-sand:            #c6c4b3;
+  --color-sand-light:      #e8e6d8;
+  --color-bg:              #fefefe;
+  --color-bg-subtle:       #f5f4ef;
+  --color-text:            #29261b;
+  --color-text-muted:      #5e6f68;
+  --color-muted-decoration:#86968f;
+  --color-border:          #d8d4c4;
+  --color-selected:        #ede9d8;
+  --color-selected-bg:     #ede9d8;
 
   --font-slab: 'Roboto Slab', Georgia, 'Times New Roman', serif;
 

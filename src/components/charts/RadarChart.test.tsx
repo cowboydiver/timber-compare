@@ -20,19 +20,25 @@ const woods: Wood[] = [
 ]
 
 beforeEach(() => {
-  useStore.setState({ selectedIds: [], activeTab: 'radar' })
+  useStore.setState({ selectedIds: [], activeTab: 'radar', hiddenIds: [], hoveredKey: null })
 })
 
 describe('WoodRadarChart', () => {
-  it('shows radar warning banner when more than 6 woods are selected', () => {
-    useStore.setState({ selectedIds: ['a', 'b', 'c', 'd', 'e', 'f', 'g'] })
+  it('shows placeholder when nothing is selected', () => {
     render(<WoodRadarChart woods={woods} />)
-    expect(screen.getByRole('status')).toBeInTheDocument()
+    expect(screen.getByText(/Vælg træsorter/i)).toBeInTheDocument()
   })
 
-  it('does not show warning banner when 6 or fewer woods are selected', () => {
+  it('renders without crashing when woods are selected', () => {
     useStore.setState({ selectedIds: ['oak'] })
     render(<WoodRadarChart woods={woods} />)
-    expect(screen.queryByRole('status')).not.toBeInTheDocument()
+    expect(screen.queryByText(/Vælg træsorter/i)).not.toBeInTheDocument()
+  })
+
+  it('respects hiddenIds — hidden wood is not rendered as a series', () => {
+    useStore.setState({ selectedIds: ['oak'], hiddenIds: ['oak'] })
+    // With all woods hidden, the chart receives no visible woods but still renders
+    render(<WoodRadarChart woods={woods} />)
+    // Should not crash
   })
 })

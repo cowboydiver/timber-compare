@@ -1,96 +1,82 @@
-import { useState } from 'react'
 import { useStore } from '../../store/useStore'
-import { filterWoods } from '../../data/utils'
-import { dict } from '../../i18n/dictionary'
-import type { Category, Wood } from '../../data/types'
+import { COLORS } from '../charts/palette'
+import type { Wood } from '../../data/types'
 
 interface Props {
   woods: Wood[]
 }
 
-const CATEGORIES: Array<{ key: Category | 'all'; label: keyof typeof dict }> = [
-  { key: 'all', label: 'all' },
-  { key: 'american', label: 'american' },
-  { key: 'european', label: 'european' },
-  { key: 'tropical', label: 'tropical' },
-]
+const PLACEHOLDER = `data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='64' height='84'%3E%3Crect width='64' height='84' fill='%23e8e6d8'/%3E%3Ctext x='32' y='46' text-anchor='middle' font-size='22' fill='%23987f67' font-family='serif'%3E%F0%9F%AA%B5%3C/text%3E%3C/svg%3E`
+
+function getNum(w: Wood, key: string): string {
+  const pv = w.properties[key]
+  return pv?.type === 'numeric' ? String(pv.value) : '—'
+}
+
+function getBotanical(w: Wood): string {
+  const pv = w.properties['botanical_name']
+  return pv?.type === 'nominal' ? pv.value : ''
+}
 
 export function Sidebar({ woods }: Props) {
   const selectedIds = useStore((s) => s.selectedIds)
-  const activeTab = useStore((s) => s.activeTab)
-  const select = useStore((s) => s.select)
   const deselect = useStore((s) => s.deselect)
   const clearSelection = useStore((s) => s.clearSelection)
+  const drawerOpen = useStore((s) => s.drawerOpen)
+  const setDrawerOpen = useStore((s) => s.setDrawerOpen)
 
-  const [search, setSearch] = useState('')
-  const [category, setCategory] = useState<Category | undefined>(undefined)
-
-  const filtered = filterWoods(woods, {
-    search: search || undefined,
-    category,
-  })
-
-  function toggleWood(w: Wood) {
-    if (selectedIds.includes(w.id)) deselect(w.id)
-    else select(w.id)
-  }
-
-  const radarOverflowStart = activeTab === 'radar' ? 6 : Infinity
+  const selectedWoods = selectedIds
+    .map((id) => woods.find((w) => w.id === id))
+    .filter((w): w is Wood => w !== undefined)
 
   return (
-    <aside>
-      {selectedIds.length > 0 && (
-        <div className="selection-count">
-          <span>{selectedIds.length} valgt</span>
-          <button onClick={clearSelection} className="clear-btn">Ryd</button>
-        </div>
-      )}
-      <input
-        type="search"
-        placeholder={dict.searchPlaceholder}
-        value={search}
-        onChange={(e) => setSearch(e.target.value)}
-      />
-      <div className="category-filters">
-        {CATEGORIES.map(({ key, label }) => (
+    <aside className="wb-rail">
+      <div className="wb-rail-head">
+        <div className="wb-rail-headline">
+          <h2>Aktuelt udvalg</h2>
           <button
-            key={key}
-            onClick={() => setCategory(key === 'all' ? undefined : key)}
-            aria-pressed={key === 'all' ? !category : category === key}
+            className="wb-rail-add"
+            onClick={() => setDrawerOpen(!drawerOpen)}
+            aria-label={drawerOpen ? 'Luk bibliotek' : 'Åbn bibliotek'}
+            title={drawerOpen ? 'Luk bibliotek' : 'Åbn bibliotek'}
           >
-            {dict[label]}
+            {drawerOpen ? '−' : '+'}
           </button>
-        ))}
+        </div>
+        <button className="wb-rail-clear" onClick={clearSelection}>Ryd alt</button>
       </div>
-      <ul role="listbox" aria-multiselectable="true" aria-label={dict.woodList}>
-        {filtered.length === 0 && (
-          <li className="no-results">{dict.noResults}</li>
-        )}
-        {filtered.map((w) => {
-          const isSelected = selectedIds.includes(w.id)
-          const selectedRank = selectedIds.indexOf(w.id)
-          const isHiddenByRadarCap = isSelected && selectedRank >= radarOverflowStart
-          return (
-            <li
-              key={w.id}
-              role="option"
-              aria-selected={isSelected}
-              tabIndex={0}
-              onClick={() => toggleWood(w)}
-              onKeyDown={(e) => {
-                if (e.key === 'Enter' || e.key === ' ') {
-                  e.preventDefault()
-                  toggleWood(w)
-                }
-              }}
+      <div className="wb-specimens">
+        {selectedWoods.map((w, i) => (
+          <article key={w.id} className="wb-spec">
+            <span className="wb-spec-bar" style={{ background: COLORS[i % COLORS.length] }} />
+            <img
+              src={w.imageUrl || PLACEHOLDER}
+              alt=""
+              className="wb-spec-img"
+            />
+            <div className="wb-spec-body">
+              <h3>{w.nameDa ?? w.id}</h3>
+              <p className="wb-spec-bot">{getBotanical(w)}</p>
+              <div className="wb-spec-grid">
+                <div><span>Vægt</span><strong>{getNum(w, 'weight')}</strong></div>
+                <div><span>Janka</span><strong>{getNum(w, 'janka_hardness')}</strong></div>
+                <div><span>MOR</span><strong>{getNum(w, 'modulus_of_rupture')}</strong></div>
+                <div><span>MOE</span><strong>{getNum(w, 'modulus_of_elasticity')}</strong></div>
+              </div>
+            </div>
+            <button
+              className="wb-spec-x"
+              onClick={() => deselect(w.id)}
+              aria-label={`Fjern ${w.nameDa ?? w.id}`}
             >
-              {w.imageUrl && <img src={w.imageUrl} alt="" />}
-              <span>{w.nameDa ?? w.id}</span>
-              {isHiddenByRadarCap && <span className="radar-overflow-badge">ikke vist</span>}
-            </li>
-          )
-        })}
-      </ul>
+              ✕
+            </button>
+          </article>
+        ))}
+        {selectedWoods.length === 0 && (
+          <p className="wb-spec-empty">Vælg træsorter fra biblioteket.</p>
+        )}
+      </div>
     </aside>
   )
 }

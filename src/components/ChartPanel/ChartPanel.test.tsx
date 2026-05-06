@@ -19,27 +19,38 @@ const woods: Wood[] = [
 ]
 
 beforeEach(() => {
-  useStore.setState({ selectedIds: ['oak'], activeTab: 'radar', barProperty: '', scatterX: '', scatterY: '', scatterColor: '' })
+  useStore.setState({
+    selectedIds: ['oak'],
+    activeTab: 'radar',
+    barProperty: '',
+    scatterX: '',
+    scatterY: '',
+    scatterColor: '',
+    hiddenIds: [],
+    hoveredKey: null,
+    colorBy: 'category',
+  })
 })
 
 describe('ChartPanel', () => {
   it('renders Radar, Bar and Scatter tabs', () => {
     render(<ChartPanel woods={woods} />)
-    expect(screen.getByRole('tab', { name: 'Radar' })).toBeInTheDocument()
-    expect(screen.getByRole('tab', { name: 'Søjle' })).toBeInTheDocument()
-    expect(screen.getByRole('tab', { name: 'Punktdiagram' })).toBeInTheDocument()
+    expect(screen.getByRole('tab', { name: /Radar/i })).toBeInTheDocument()
+    expect(screen.getByRole('tab', { name: /Søjle/i })).toBeInTheDocument()
+    expect(screen.getByRole('tab', { name: /Punkter/i })).toBeInTheDocument()
   })
 
   it('clicking a tab updates activeTab in store', () => {
     render(<ChartPanel woods={woods} />)
-    fireEvent.click(screen.getByRole('tab', { name: 'Søjle' }))
+    fireEvent.click(screen.getByRole('tab', { name: /Søjle/i }))
     expect(useStore.getState().activeTab).toBe('bar')
   })
 
-  it('shows bar property dropdown when bar tab is active', () => {
+  it('shows bar property and color dropdowns when bar tab is active', () => {
     useStore.setState({ activeTab: 'bar' })
     render(<ChartPanel woods={woods} />)
-    expect(screen.getByRole('combobox')).toBeInTheDocument()
+    expect(screen.getByLabelText('Egenskab')).toBeInTheDocument()
+    expect(screen.getByLabelText('Farve')).toBeInTheDocument()
   })
 
   it('shows X-axis dropdown when scatter tab is active', () => {
@@ -48,21 +59,31 @@ describe('ChartPanel', () => {
     expect(screen.getByLabelText(/x.akse/i)).toBeInTheDocument()
   })
 
+  it('shows normalization info text when radar tab is active', () => {
+    render(<ChartPanel woods={woods} />)
+    expect(screen.getByText(/Normaliseret 0–100/i)).toBeInTheDocument()
+  })
+
   it('ArrowRight moves focus to next tab and activates it', () => {
     render(<ChartPanel woods={woods} />)
-    const radarTab = screen.getByRole('tab', { name: 'Radar' })
+    const radarTab = screen.getByRole('tab', { name: /Radar/i })
     radarTab.focus()
     fireEvent.keyDown(radarTab, { key: 'ArrowRight' })
     expect(useStore.getState().activeTab).toBe('bar')
-    expect(screen.getByRole('tab', { name: 'Søjle' })).toHaveFocus()
+    expect(screen.getByRole('tab', { name: /Søjle/i })).toHaveFocus()
   })
 
   it('ArrowLeft wraps from first tab to last tab', () => {
     render(<ChartPanel woods={woods} />)
-    const radarTab = screen.getByRole('tab', { name: 'Radar' })
+    const radarTab = screen.getByRole('tab', { name: /Radar/i })
     radarTab.focus()
     fireEvent.keyDown(radarTab, { key: 'ArrowLeft' })
     expect(useStore.getState().activeTab).toBe('scatter')
-    expect(screen.getByRole('tab', { name: 'Punktdiagram' })).toHaveFocus()
+    expect(screen.getByRole('tab', { name: /Punkter/i })).toHaveFocus()
+  })
+
+  it('shows the status footer', () => {
+    render(<ChartPanel woods={woods} />)
+    expect(screen.getByText(/træsorter sammenlignes/i)).toBeInTheDocument()
   })
 })

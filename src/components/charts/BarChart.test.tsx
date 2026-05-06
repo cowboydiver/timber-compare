@@ -1,5 +1,5 @@
 import { describe, it, expect, beforeEach } from 'vitest'
-import { render, screen, fireEvent } from '@testing-library/react'
+import { render, screen } from '@testing-library/react'
 import { WoodBarChart } from './BarChart'
 import { useStore } from '../../store/useStore'
 import type { Wood } from '../../data/types'
@@ -36,22 +36,21 @@ beforeEach(() => {
     selectedIds: ['oak', 'ash'],
     activeTab: 'bar',
     barProperty: '',
+    hiddenIds: [],
+    hoveredKey: null,
+    colorBy: 'category',
   })
 })
 
 describe('WoodBarChart', () => {
-  it('renders a dropdown with numeric property keys as options', () => {
+  it('renders without crashing when woods are selected', () => {
     render(<WoodBarChart woods={woods} />)
-    const select = screen.getByRole('combobox')
-    const options = Array.from(select.querySelectorAll('option')).map((o) => o.value)
-    expect(options).toContain('weight')
-    expect(options).toContain('janka_hardness')
-    expect(options).not.toContain('origin')
+    expect(screen.queryByText(/Vælg træsorter/i)).not.toBeInTheDocument()
   })
 
-  it('changing the dropdown updates barProperty in store', () => {
+  it('shows placeholder when no woods are selected', () => {
+    useStore.setState({ selectedIds: [] })
     render(<WoodBarChart woods={woods} />)
-    fireEvent.change(screen.getByRole('combobox'), { target: { value: 'janka_hardness' } })
-    expect(useStore.getState().barProperty).toBe('janka_hardness')
+    expect(screen.getByText(/Vælg træsorter/i)).toBeInTheDocument()
   })
 })

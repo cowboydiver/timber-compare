@@ -1,76 +1,80 @@
 import { describe, it, expect, beforeEach } from 'vitest'
 import { render, screen, fireEvent } from '@testing-library/react'
-import userEvent from '@testing-library/user-event'
 import { Sidebar } from './Sidebar'
 import { useStore } from '../../store/useStore'
 import type { Wood } from '../../data/types'
 
 const woods: Wood[] = [
-  { id: 'oak', nameDa: 'Eg', nameEn: 'Oak', category: 'european', imageUrl: '', properties: {} },
-  { id: 'teak', nameDa: 'Teak', nameEn: 'Teak', category: 'tropical', imageUrl: '', properties: {} },
-  { id: 'walnut', nameDa: 'Valnød', nameEn: 'Walnut', category: 'american', imageUrl: '', properties: {} },
+  {
+    id: 'oak',
+    nameDa: 'Eg',
+    nameEn: 'Oak',
+    category: 'european',
+    imageUrl: '',
+    properties: {
+      botanical_name: { type: 'nominal', value: 'Quercus robur' },
+      weight: { type: 'numeric', value: 700, unit: 'kg/m3' },
+      janka_hardness: { type: 'numeric', value: 650, unit: '' },
+      modulus_of_rupture: { type: 'numeric', value: 97, unit: 'MPa' },
+      modulus_of_elasticity: { type: 'numeric', value: 10.6, unit: 'GPa' },
+    },
+  },
+  {
+    id: 'teak',
+    nameDa: 'Teak',
+    nameEn: 'Teak',
+    category: 'tropical',
+    imageUrl: '',
+    properties: {},
+  },
 ]
 
 beforeEach(() => {
-  useStore.setState({ selectedIds: [], activeTab: 'radar', barProperty: '', scatterX: '', scatterY: '', scatterColor: '' })
+  useStore.setState({ selectedIds: [], hiddenIds: [], hoveredKey: null })
 })
 
 describe('Sidebar', () => {
-  it('renders Danish wood names', () => {
-    render(<Sidebar woods={woods} />)
-    expect(screen.getByText('Eg')).toBeInTheDocument()
-    expect(screen.getByText('Teak')).toBeInTheDocument()
-    expect(screen.getByText('Valnød')).toBeInTheDocument()
-  })
-
-  it('search filters by Danish name (case-insensitive)', () => {
-    render(<Sidebar woods={woods} />)
-    fireEvent.change(screen.getByRole('searchbox'), { target: { value: 'val' } })
-    expect(screen.getByText('Valnød')).toBeInTheDocument()
-    expect(screen.queryByText('Eg')).not.toBeInTheDocument()
-  })
-
-  it('category filter buttons narrow the list', () => {
-    render(<Sidebar woods={woods} />)
-    fireEvent.click(screen.getByRole('button', { name: 'Tropisk' }))
-    expect(screen.getByText('Teak')).toBeInTheDocument()
-    expect(screen.queryByText('Eg')).not.toBeInTheDocument()
-  })
-
-  it('clicking a wood adds it to selectedIds', () => {
-    render(<Sidebar woods={woods} />)
-    fireEvent.click(screen.getByText('Eg'))
-    expect(useStore.getState().selectedIds).toContain('oak')
-  })
-
-  it('clicking a selected wood deselects it', () => {
+  it('shows specimen cards only for selected woods', () => {
     useStore.setState({ selectedIds: ['oak'] } as Parameters<typeof useStore.setState>[0])
     render(<Sidebar woods={woods} />)
-    fireEvent.click(screen.getByText('Eg'))
+    expect(screen.getByText('Eg')).toBeInTheDocument()
+    expect(screen.queryByText('Teak')).not.toBeInTheDocument()
+  })
+
+  it('shows the Aktuelt udvalg heading', () => {
+    render(<Sidebar woods={woods} />)
+    expect(screen.getByText('Aktuelt udvalg')).toBeInTheDocument()
+  })
+
+  it('shows botanical name on the specimen card', () => {
+    useStore.setState({ selectedIds: ['oak'] } as Parameters<typeof useStore.setState>[0])
+    render(<Sidebar woods={woods} />)
+    expect(screen.getByText('Quercus robur')).toBeInTheDocument()
+  })
+
+  it('remove button deselects the wood', () => {
+    useStore.setState({ selectedIds: ['oak'] } as Parameters<typeof useStore.setState>[0])
+    render(<Sidebar woods={woods} />)
+    fireEvent.click(screen.getByRole('button', { name: /Fjern Eg/i }))
     expect(useStore.getState().selectedIds).not.toContain('oak')
   })
 
-  it('Enter key on an option toggles selection', async () => {
-    const user = userEvent.setup()
+  it('Ryd alt clears all selections', () => {
+    useStore.setState({ selectedIds: ['oak', 'teak'] } as Parameters<typeof useStore.setState>[0])
     render(<Sidebar woods={woods} />)
-    const option = screen.getByRole('option', { name: /Eg/ })
-    option.focus()
-    await user.keyboard('{Enter}')
-    expect(useStore.getState().selectedIds).toContain('oak')
+    fireEvent.click(screen.getByText('Ryd alt'))
+    expect(useStore.getState().selectedIds).toHaveLength(0)
   })
 
-  it('Space key on an option toggles selection', async () => {
-    const user = userEvent.setup()
+  it('shows empty state when nothing is selected', () => {
     render(<Sidebar woods={woods} />)
-    const option = screen.getByRole('option', { name: /Teak/ })
-    option.focus()
-    await user.keyboard(' ')
-    expect(useStore.getState().selectedIds).toContain('teak')
+    expect(screen.getByText(/Vælg træsorter fra biblioteket/i)).toBeInTheDocument()
   })
 
-  it('shows no-results message when search matches nothing', () => {
+  it('shows stats grid with Vægt and Janka labels', () => {
+    useStore.setState({ selectedIds: ['oak'] } as Parameters<typeof useStore.setState>[0])
     render(<Sidebar woods={woods} />)
-    fireEvent.change(screen.getByRole('searchbox'), { target: { value: 'zzzzz' } })
-    expect(screen.getByText('Ingen træsorter matcher din søgning.')).toBeInTheDocument()
+    expect(screen.getByText('Vægt')).toBeInTheDocument()
+    expect(screen.getByText('Janka')).toBeInTheDocument()
   })
 })
