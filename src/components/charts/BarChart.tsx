@@ -5,7 +5,6 @@ import {
   XAxis,
   YAxis,
   Tooltip,
-  CartesianGrid,
   ResponsiveContainer,
 } from 'recharts'
 import { useStore } from '../../store/useStore'
@@ -50,6 +49,7 @@ export function WoodBarChart({ woods }: Props) {
   })
 
   const data = allData.filter((d) => d.value !== null)
+  const sortedData = [...data].sort((a, b) => (b.value ?? 0) - (a.value ?? 0))
   const dropped = allData.filter((d) => d.value === null).map((d) => d.name)
   const unit = data[0]?.unit ?? ''
   const anyHovered = hoveredKey !== null
@@ -57,25 +57,26 @@ export function WoodBarChart({ woods }: Props) {
   return (
     <div style={{ width: '100%', flex: '1 1 0', minHeight: 0, display: 'flex', flexDirection: 'column' }}>
       <ResponsiveContainer width="100%" height="100%" minHeight={260}>
-        <BarChart data={data} margin={{ top: 4, right: 16, left: 0, bottom: 60 }}>
-          <CartesianGrid strokeDasharray="3 3" vertical={false} stroke="var(--color-muted-decoration)" />
+        <BarChart layout="vertical" data={sortedData} margin={{ top: 4, right: 24, left: 0, bottom: 4 }}>
           <XAxis
-            dataKey="name"
-            tick={{ fontSize: 11, fill: 'var(--color-text-muted)' }}
-            angle={-35}
-            textAnchor="end"
-            interval={0}
-          />
-          <YAxis
+            type="number"
             tick={{ fontSize: 11, fill: 'var(--color-text-muted)' }}
             tickFormatter={(v) => unit ? `${v} ${unit}` : `${v}`}
+          />
+          <YAxis
+            type="category"
+            dataKey="name"
+            width={130}
+            tick={{ fontSize: 11, fill: 'var(--color-text-muted)' }}
           />
           <Tooltip
             contentStyle={{ fontSize: '12px', borderColor: 'var(--color-border)' }}
             formatter={(v) => [`${v}${unit ? ` ${unit}` : ''}`, propertyLabel(effectiveProperty)]}
+            wrapperStyle={{ zIndex: 10 }}
+            isAnimationActive={false}
           />
-          <Bar dataKey="value" radius={[2, 2, 0, 0]}>
-            {data.map((entry, index) => {
+          <Bar dataKey="value" radius={[0, 2, 2, 0]} maxBarSize={40}>
+            {sortedData.map((entry, index) => {
               const grp = groupKey(entry.category, entry.origin, colorBy)
               const color = groupColor(entry.category, entry.origin, colorBy)
               const dim = anyHovered && hoveredKey !== grp
