@@ -35,7 +35,7 @@ export function WoodRadarChart({ woods }: Props) {
   // Normalize per property to 0–100 across all woods
   const minMax: Record<string, { min: number; max: number }> = {}
   for (const key of numericKeys) {
-    const vals = woods.flatMap((w) => {
+    const vals = selectedWoods.flatMap((w) => {
       const pv = w.properties[key]
       return pv?.type === 'numeric' ? [pv.value] : []
     })
