@@ -144,8 +144,8 @@
   background: var(--color-sand-light);
 }
 
-.wb-body-no-drawer {
-  grid-template-columns: 280px 1fr;
+.wb-body.wb-drawer-collapsed {
+  grid-template-columns: 280px 1fr 28px;
 }
 
 /* ── Left rail ───────────────────────────────────────────────────── */
@@ -500,8 +500,41 @@
 .wb-drawer {
   background: var(--color-bg);
   display: flex;
+  flex-direction: row;
+  overflow: hidden;
+}
+
+.wb-drawer-tab {
+  width: 28px;
+  flex-shrink: 0;
+  background: var(--color-bg-subtle);
+  border: none;
+  border-left: 1px solid var(--color-sand-light);
+  cursor: pointer;
+  font-size: 11px;
+  color: var(--color-text-muted);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  writing-mode: vertical-lr;
+}
+
+.wb-drawer-tab:hover {
+  color: var(--color-primary);
+  background: var(--color-sand-light);
+}
+
+.wb-drawer-inner {
+  flex: 1;
+  display: flex;
   flex-direction: column;
   overflow: hidden;
+  min-width: 0;
+}
+
+.wb-drawer-collapsed .wb-drawer-inner {
+  display: none;
 }
 
 .wb-drawer-head {
@@ -520,16 +553,6 @@
   text-transform: uppercase;
   font-weight: 500;
   color: var(--color-primary);
-}
-
-.wb-drawer-close {
-  background: none;
-  border: none;
-  cursor: pointer;
-  font-family: inherit;
-  font-size: 13px;
-  color: var(--color-muted);
-  padding: 2px 6px;
 }
 
 .wb-search {

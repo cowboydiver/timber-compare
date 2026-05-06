@@ -16,10 +16,10 @@ export default function App() {
   return (
     <Layout>
       <Header />
-      <div className={`wb-body${drawerOpen ? '' : ' wb-body-no-drawer'}`}>
+      <div className={`wb-body${drawerOpen ? '' : ' wb-drawer-collapsed'}`}>
         <Sidebar woods={woods} />
         <ChartPanel woods={woods} />
-        {drawerOpen && <Drawer woods={woods} />}
+        <Drawer woods={woods} />
       </div>
     </Layout>
   )
