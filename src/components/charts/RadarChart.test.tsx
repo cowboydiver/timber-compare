@@ -20,18 +20,19 @@ const woods: Wood[] = [
 ]
 
 beforeEach(() => {
-  useStore.setState({ selectedIds: [], activeTab: 'radar', radarWarning: false })
+  useStore.setState({ selectedIds: [], activeTab: 'radar' })
 })
 
 describe('WoodRadarChart', () => {
-  it('shows radar warning banner when radarWarning is true', () => {
-    useStore.setState({ radarWarning: true })
+  it('shows radar warning banner when more than 6 woods are selected', () => {
+    useStore.setState({ selectedIds: ['a', 'b', 'c', 'd', 'e', 'f', 'g'] })
     render(<WoodRadarChart woods={woods} />)
-    expect(screen.getByRole('alert')).toBeInTheDocument()
+    expect(screen.getByRole('status')).toBeInTheDocument()
   })
 
-  it('does not show warning banner when radarWarning is false', () => {
+  it('does not show warning banner when 6 or fewer woods are selected', () => {
+    useStore.setState({ selectedIds: ['oak'] })
     render(<WoodRadarChart woods={woods} />)
-    expect(screen.queryByRole('alert')).not.toBeInTheDocument()
+    expect(screen.queryByRole('status')).not.toBeInTheDocument()
   })
 })

@@ -1,5 +1,6 @@
 import { describe, it, expect, beforeEach } from 'vitest'
 import { render, screen, fireEvent } from '@testing-library/react'
+import userEvent from '@testing-library/user-event'
 import { Sidebar } from './Sidebar'
 import { useStore } from '../../store/useStore'
 import type { Wood } from '../../data/types'
@@ -11,7 +12,7 @@ const woods: Wood[] = [
 ]
 
 beforeEach(() => {
-  useStore.setState({ selectedIds: [], activeTab: 'radar', radarWarning: false, barProperty: '', scatterX: '', scatterY: '', scatterColor: '' })
+  useStore.setState({ selectedIds: [], activeTab: 'radar', barProperty: '', scatterX: '', scatterY: '', scatterColor: '' })
 })
 
 describe('Sidebar', () => {
@@ -47,5 +48,29 @@ describe('Sidebar', () => {
     render(<Sidebar woods={woods} />)
     fireEvent.click(screen.getByText('Eg'))
     expect(useStore.getState().selectedIds).not.toContain('oak')
+  })
+
+  it('Enter key on an option toggles selection', async () => {
+    const user = userEvent.setup()
+    render(<Sidebar woods={woods} />)
+    const option = screen.getByRole('option', { name: /Eg/ })
+    option.focus()
+    await user.keyboard('{Enter}')
+    expect(useStore.getState().selectedIds).toContain('oak')
+  })
+
+  it('Space key on an option toggles selection', async () => {
+    const user = userEvent.setup()
+    render(<Sidebar woods={woods} />)
+    const option = screen.getByRole('option', { name: /Teak/ })
+    option.focus()
+    await user.keyboard(' ')
+    expect(useStore.getState().selectedIds).toContain('teak')
+  })
+
+  it('shows no-results message when search matches nothing', () => {
+    render(<Sidebar woods={woods} />)
+    fireEvent.change(screen.getByRole('searchbox'), { target: { value: 'zzzzz' } })
+    expect(screen.getByText('Ingen træsorter matcher din søgning.')).toBeInTheDocument()
   })
 })

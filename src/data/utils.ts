@@ -1,3 +1,4 @@
+import { propertyLabels } from '../i18n/dictionary'
 import type { Category, PropertyValue, Wood } from './types'
 
 export function filterWoods(
@@ -23,6 +24,10 @@ export function getNumericProperties(woods: Wood[]): string[] {
   return [...keys].filter((key) =>
     woods.some((w) => w.properties[key]?.type === 'numeric'),
   )
+}
+
+export function propertyLabel(key: string): string {
+  return propertyLabels[key] ?? key
 }
 
 export function getNominalProperties(woods: Wood[]): string[] {

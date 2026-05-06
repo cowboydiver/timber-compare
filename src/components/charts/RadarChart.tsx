@@ -3,31 +3,35 @@ import {
   Radar,
   PolarGrid,
   PolarAngleAxis,
+  PolarRadiusAxis,
   ResponsiveContainer,
   Legend,
 } from 'recharts'
 import { useStore } from '../../store/useStore'
-import { getNumericProperties } from '../../data/utils'
+import { getNumericProperties, propertyLabel } from '../../data/utils'
 import { dict } from '../../i18n/dictionary'
+import { COLORS } from './palette'
 import type { Wood } from '../../data/types'
 
 interface Props {
   woods: Wood[]
 }
 
-const COLORS = ['#8B6914', '#5C8A3C', '#2E6B8A', '#8A3C2E', '#6B2E8A', '#2E8A6B']
-
 export function WoodRadarChart({ woods }: Props) {
-  const radarWarning = useStore((s) => s.radarWarning)
   const selectedIds = useStore((s) => s.selectedIds)
+  const radarWarning = selectedIds.length > 6
 
   const numericKeys = getNumericProperties(woods)
   const selectedWoods = woods
     .filter((w) => selectedIds.includes(w.id))
     .slice(0, 6)
 
+  if (selectedIds.length === 0) {
+    return <p className="chart-empty">{dict.chartPlaceholder}</p>
+  }
+
   const data = numericKeys.map((key) => {
-    const entry: Record<string, string | number> = { property: key }
+    const entry: Record<string, string | number> = { property: propertyLabel(key) }
     for (const w of selectedWoods) {
       const pv = w.properties[key]
       entry[w.id] = pv?.type === 'numeric' ? pv.value : 0
@@ -37,11 +41,12 @@ export function WoodRadarChart({ woods }: Props) {
 
   return (
     <div>
-      {radarWarning && <p role="alert">{dict.radarWarning}</p>}
-      <ResponsiveContainer width="100%" height={400}>
+      {radarWarning && <p role="status">{dict.radarWarning}</p>}
+      <ResponsiveContainer width="100%" height={420}>
         <RadarChart data={data}>
-          <PolarGrid />
-          <PolarAngleAxis dataKey="property" />
+          <PolarGrid stroke="var(--color-muted-decoration)" />
+          <PolarAngleAxis dataKey="property" tick={{ fontSize: 11, fill: 'var(--color-text-muted)' }} />
+          <PolarRadiusAxis angle={30} tick={{ fontSize: 10, fill: 'var(--color-muted-decoration)' }} />
           {selectedWoods.map((w, i) => (
             <Radar
               key={w.id}
@@ -49,10 +54,10 @@ export function WoodRadarChart({ woods }: Props) {
               dataKey={w.id}
               stroke={COLORS[i]}
               fill={COLORS[i]}
-              fillOpacity={0.2}
+              fillOpacity={0.15}
             />
           ))}
-          <Legend />
+          <Legend wrapperStyle={{ fontSize: '12px' }} />
         </RadarChart>
       </ResponsiveContainer>
     </div>

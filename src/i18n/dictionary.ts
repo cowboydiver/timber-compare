@@ -8,7 +8,26 @@ export const dict = {
   bar: 'Søjle',
   scatter: 'Punktdiagram',
   desktopOnly: 'Dette værktøj er bedst på en større skærm.',
+  desktopOnlyHint: 'Anbefalet bredde: 1024 px eller mere.',
   chartPlaceholder: 'Vælg træsorter fra listen for at se diagrammer.',
   radarWarning: 'Radaret viser maks. 6 træsorter.',
   logoLink: 'https://www.globaltimber.dk',
+  woodList: 'Træsorter',
+  noResults: 'Ingen træsorter matcher din søgning.',
+  property: 'Egenskab',
+  axisX: 'X-akse',
+  axisY: 'Y-akse',
+  color: 'Farve',
 } as const
+
+export const propertyLabels: Record<string, string> = {
+  weight: 'Vægt (kg/m³)',
+  janka_hardness: 'Janka hårdhed',
+  modulus_of_elasticity: 'Elasticitetsmodul (GPa)',
+  modulus_of_rupture: 'Bøjningsmodul (MPa)',
+  bending_strength: 'Bøjningsstyrke',
+  moisture_content: 'Fugtindhold',
+  shrinkage: 'Svind',
+  botanical_name: 'Botanisk navn',
+  origin: 'Oprindelse',
+}

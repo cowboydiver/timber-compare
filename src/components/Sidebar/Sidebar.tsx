@@ -17,8 +17,10 @@ const CATEGORIES: Array<{ key: Category | 'all'; label: keyof typeof dict }> = [
 
 export function Sidebar({ woods }: Props) {
   const selectedIds = useStore((s) => s.selectedIds)
+  const activeTab = useStore((s) => s.activeTab)
   const select = useStore((s) => s.select)
   const deselect = useStore((s) => s.deselect)
+  const clearSelection = useStore((s) => s.clearSelection)
 
   const [search, setSearch] = useState('')
   const [category, setCategory] = useState<Category | undefined>(undefined)
@@ -33,16 +35,23 @@ export function Sidebar({ woods }: Props) {
     else select(w.id)
   }
 
+  const radarOverflowStart = activeTab === 'radar' ? 6 : Infinity
+
   return (
     <aside>
+      {selectedIds.length > 0 && (
+        <div className="selection-count">
+          <span>{selectedIds.length} valgt</span>
+          <button onClick={clearSelection} className="clear-btn">Ryd</button>
+        </div>
+      )}
       <input
-        role="searchbox"
         type="search"
         placeholder={dict.searchPlaceholder}
         value={search}
         onChange={(e) => setSearch(e.target.value)}
       />
-      <div>
+      <div className="category-filters">
         {CATEGORIES.map(({ key, label }) => (
           <button
             key={key}
@@ -53,13 +62,31 @@ export function Sidebar({ woods }: Props) {
           </button>
         ))}
       </div>
-      <ul>
+      <ul role="listbox" aria-multiselectable="true" aria-label={dict.woodList}>
+        {filtered.length === 0 && (
+          <li className="no-results">{dict.noResults}</li>
+        )}
         {filtered.map((w) => {
           const isSelected = selectedIds.includes(w.id)
+          const selectedRank = selectedIds.indexOf(w.id)
+          const isHiddenByRadarCap = isSelected && selectedRank >= radarOverflowStart
           return (
-            <li key={w.id} aria-selected={isSelected} onClick={() => toggleWood(w)}>
+            <li
+              key={w.id}
+              role="option"
+              aria-selected={isSelected}
+              tabIndex={0}
+              onClick={() => toggleWood(w)}
+              onKeyDown={(e) => {
+                if (e.key === 'Enter' || e.key === ' ') {
+                  e.preventDefault()
+                  toggleWood(w)
+                }
+              }}
+            >
               {w.imageUrl && <img src={w.imageUrl} alt="" />}
               <span>{w.nameDa ?? w.id}</span>
+              {isHiddenByRadarCap && <span className="radar-overflow-badge">ikke vist</span>}
             </li>
           )
         })}
