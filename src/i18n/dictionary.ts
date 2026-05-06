@@ -6,7 +6,7 @@ export const dict = {
   tropical: 'Tropisk',
   radar: 'Radar',
   bar: 'Søjle',
-  scatter: 'Punktdiagram',
+  scatter: 'Punkter',
   desktopOnly: 'Dette værktøj er bedst på en større skærm.',
   desktopOnlyHint: 'Anbefalet bredde: 1024 px eller mere.',
   chartPlaceholder: 'Vælg træsorter fra listen for at se diagrammer.',

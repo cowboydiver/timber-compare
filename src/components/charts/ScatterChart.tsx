@@ -4,14 +4,13 @@ import {
   XAxis,
   YAxis,
   Tooltip,
-  Legend,
   CartesianGrid,
   ResponsiveContainer,
 } from 'recharts'
 import { useStore } from '../../store/useStore'
-import { getNumericProperties, getNominalProperties, propertyLabel } from '../../data/utils'
+import { getNumericProperties, propertyLabel } from '../../data/utils'
 import { dict } from '../../i18n/dictionary'
-import { COLORS } from './palette'
+import { groupColor, groupKey } from './palette'
 import type { Wood } from '../../data/types'
 
 interface Props {
@@ -23,128 +22,72 @@ type DataPoint = {
   y: number
   name: string
   imageUrl: string
-  colorGroup: string
 }
 
 type ScatterGroup = { name: string; color: string; data: DataPoint[] }
 
 export function WoodScatterChart({ woods }: Props) {
   const selectedIds = useStore((s) => s.selectedIds)
-  const scatterX = useStore((s) => s.scatterX)
-  const scatterY = useStore((s) => s.scatterY)
-  const scatterColor = useStore((s) => s.scatterColor)
-  const setScatterX = useStore((s) => s.setScatterX)
-  const setScatterY = useStore((s) => s.setScatterY)
-  const setScatterColor = useStore((s) => s.setScatterColor)
+  const hiddenIds   = useStore((s) => s.hiddenIds)
+  const hoveredKey  = useStore((s) => s.hoveredKey)
+  const colorBy     = useStore((s) => s.colorBy)
+  const scatterX    = useStore((s) => s.scatterX)
+  const scatterY    = useStore((s) => s.scatterY)
 
   const numericKeys = getNumericProperties(woods)
-  const nominalKeys = getNominalProperties(woods)
+  const effectiveX  = scatterX || numericKeys[0] || ''
+  const effectiveY  = scatterY || numericKeys[1] || numericKeys[0] || ''
 
-  const effectiveX = scatterX || numericKeys[0] || ''
-  const effectiveY = scatterY || numericKeys[1] || numericKeys[0] || ''
-  const effectiveColor = scatterColor || nominalKeys[0] || ''
-
-  const selectedWoods = woods.filter((w) => selectedIds.includes(w.id))
+  const selectedWoods = selectedIds
+    .map((id) => woods.find((w) => w.id === id))
+    .filter((w): w is Wood => w !== undefined)
+    .filter((w) => !hiddenIds.includes(w.id))
 
   if (selectedIds.length === 0) {
     return <p className="chart-empty">{dict.chartPlaceholder}</p>
   }
 
-  const hasColorGrouping = nominalKeys.length > 0
+  const groupMap = new Map<string, ScatterGroup>()
+  for (const w of selectedWoods) {
+    const xv = w.properties[effectiveX]
+    const yv = w.properties[effectiveY]
+    if (xv?.type !== 'numeric' || yv?.type !== 'numeric') continue
 
-  let groups: ScatterGroup[]
+    const origin = w.properties['origin']?.type === 'nominal' ? w.properties['origin'].value : ''
+    const key   = groupKey(w.category, origin, colorBy)
+    const color = groupColor(w.category, origin, colorBy)
 
-  if (hasColorGrouping && effectiveColor) {
-    const valueMap = new Map<string, { colorIdx: number; data: DataPoint[] }>()
-
-    for (const w of selectedWoods) {
-      const cv = w.properties[effectiveColor]
-      if (cv?.type !== 'nominal') continue
-
-      const val = cv.value
-      if (!valueMap.has(val)) {
-        valueMap.set(val, { colorIdx: valueMap.size, data: [] })
-      }
-
-      const xv = w.properties[effectiveX]
-      const yv = w.properties[effectiveY]
-      if (xv?.type !== 'numeric' || yv?.type !== 'numeric') continue
-
-      valueMap.get(val)!.data.push({
-        x: xv.value,
-        y: yv.value,
-        name: w.nameDa ?? w.id,
-        imageUrl: w.imageUrl,
-        colorGroup: val,
-      })
+    if (!groupMap.has(key)) {
+      groupMap.set(key, { name: key, color, data: [] })
     }
-
-    groups = [...valueMap.entries()].map(([name, { colorIdx, data }]) => ({
-      name,
-      color: COLORS[colorIdx % COLORS.length],
-      data,
-    }))
-  } else {
-    const data = selectedWoods.flatMap((w) => {
-      const xv = w.properties[effectiveX]
-      const yv = w.properties[effectiveY]
-      if (xv?.type !== 'numeric' || yv?.type !== 'numeric') return []
-      return [{
-        x: xv.value,
-        y: yv.value,
-        name: w.nameDa ?? w.id,
-        imageUrl: w.imageUrl,
-        colorGroup: '',
-      }]
+    groupMap.get(key)!.data.push({
+      x: xv.value,
+      y: yv.value,
+      name: w.nameDa ?? w.id,
+      imageUrl: w.imageUrl,
     })
-    groups = [{ name: '', color: '#987f67', data }]
   }
 
+  const groups = [...groupMap.values()]
+  const anyHovered = hoveredKey !== null
+
   return (
-    <div>
-      <div className="chart-controls">
-        <label htmlFor="scatter-x">{dict.axisX}</label>
-        <select
-          id="scatter-x"
-          value={effectiveX}
-          onChange={(e) => setScatterX(e.target.value)}
-        >
-          {numericKeys.map((key) => (
-            <option key={key} value={key}>{propertyLabel(key)}</option>
-          ))}
-        </select>
-
-        <label htmlFor="scatter-y">{dict.axisY}</label>
-        <select
-          id="scatter-y"
-          value={effectiveY}
-          onChange={(e) => setScatterY(e.target.value)}
-        >
-          {numericKeys.map((key) => (
-            <option key={key} value={key}>{propertyLabel(key)}</option>
-          ))}
-        </select>
-
-        {nominalKeys.length > 0 && (
-          <>
-            <label htmlFor="scatter-color">{dict.color}</label>
-            <select
-              id="scatter-color"
-              value={effectiveColor}
-              onChange={(e) => setScatterColor(e.target.value)}
-            >
-              {nominalKeys.map((key) => (
-                <option key={key} value={key}>{propertyLabel(key)}</option>
-              ))}
-            </select>
-          </>
-        )}
-      </div>
-      <ResponsiveContainer width="100%" height={400}>
+    <div style={{ width: '100%', flex: '1 1 0', minHeight: 0 }}>
+      <ResponsiveContainer width="100%" height="100%" minHeight={260}>
         <ScatterChart margin={{ top: 4, right: 24, left: 24, bottom: 4 }}>
           <CartesianGrid stroke="var(--color-muted-decoration)" />
-          <XAxis dataKey="x" name={effectiveX} tick={{ fontSize: 11, fill: 'var(--color-text-muted)' }} label={{ value: propertyLabel(effectiveX), position: 'insideBottom', offset: -4, fontSize: 11, fill: 'var(--color-text-muted)' }} />
-          <YAxis dataKey="y" name={effectiveY} tick={{ fontSize: 11, fill: 'var(--color-text-muted)' }} label={{ value: propertyLabel(effectiveY), angle: -90, position: 'insideLeft', fontSize: 11, fill: 'var(--color-text-muted)' }} />
+          <XAxis
+            dataKey="x"
+            name={effectiveX}
+            tick={{ fontSize: 11, fill: 'var(--color-text-muted)' }}
+            label={{ value: propertyLabel(effectiveX), position: 'insideBottom', offset: -4, fontSize: 11, fill: 'var(--color-text-muted)' }}
+          />
+          <YAxis
+            dataKey="y"
+            name={effectiveY}
+            tick={{ fontSize: 11, fill: 'var(--color-text-muted)' }}
+            label={{ value: propertyLabel(effectiveY), angle: -90, position: 'insideLeft', fontSize: 11, fill: 'var(--color-text-muted)' }}
+          />
           <Tooltip
             content={({ payload }) => {
               if (!payload?.length) return null
@@ -155,15 +98,22 @@ export function WoodScatterChart({ woods }: Props) {
                   <strong style={{ color: '#3c453b' }}>{d.name}</strong>
                   <div style={{ color: 'var(--color-text-muted)', marginTop: 4 }}>{propertyLabel(effectiveX)}: {d.x}</div>
                   <div style={{ color: 'var(--color-text-muted)' }}>{propertyLabel(effectiveY)}: {d.y}</div>
-                  {d.colorGroup && <div style={{ color: 'var(--color-text-muted)' }}>{propertyLabel(effectiveColor)}: {d.colorGroup}</div>}
                 </div>
               )
             }}
           />
-          {groups.map(({ name, color, data }) => (
-            <Scatter key={name || 'default'} name={name} data={data} fill={color} />
-          ))}
-          {hasColorGrouping && <Legend wrapperStyle={{ fontSize: '12px' }} />}
+          {groups.map(({ name, color, data }) => {
+            const dim = anyHovered && hoveredKey !== name
+            return (
+              <Scatter
+                key={name || 'default'}
+                name={name}
+                data={data}
+                fill={color}
+                opacity={dim ? 0.15 : 1}
+              />
+            )
+          })}
         </ScatterChart>
       </ResponsiveContainer>
     </div>
