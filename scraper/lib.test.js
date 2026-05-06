@@ -1,6 +1,6 @@
 // @vitest-environment node
 import { describe, it, expect } from 'vitest'
-import { slugify, parseValue, normalizeKey, mergeWoods } from './lib.js'
+import { slugify, parseValue, normalizeKey } from './lib.js'
 
 describe('slugify', () => {
   it('lowercases and hyphenates a simple name', () => {
@@ -62,25 +62,3 @@ describe('normalizeKey', () => {
   })
 })
 
-describe('mergeWoods', () => {
-  const dkOak = { nameDa: 'Eg', nameEn: 'Oak', category: 'european', imageUrl: 'dk.jpg', properties: { weight: { type: 'numeric', value: 650, unit: 'kg/m3' } } }
-  const asiaOak = { nameDa: null, nameEn: 'Oak', category: 'european', imageUrl: 'asia.jpg', properties: { weight: { type: 'numeric', value: 770, unit: 'kg/m3' } } }
-  const asiaTeak = { nameDa: null, nameEn: 'Teak', category: 'tropical', imageUrl: 'teak.jpg', properties: {} }
-
-  it('merges woods present on both sites by English name', () => {
-    const result = mergeWoods([dkOak], [asiaOak])
-    expect(result).toHaveLength(1)
-    expect(result[0]).toMatchObject({ id: 'oak', nameDa: 'Eg', nameEn: 'Oak', category: 'european' })
-  })
-
-  it('includes wood only on dk with nameEn: null', () => {
-    const dkOnly = { nameDa: 'Birk', nameEn: null, category: 'european', imageUrl: '', properties: {} }
-    const result = mergeWoods([dkOnly], [])
-    expect(result[0]).toMatchObject({ nameEn: null, nameDa: 'Birk' })
-  })
-
-  it('includes wood only on asia with nameDa: null', () => {
-    const result = mergeWoods([], [asiaTeak])
-    expect(result[0]).toMatchObject({ nameDa: null, nameEn: 'Teak' })
-  })
-})

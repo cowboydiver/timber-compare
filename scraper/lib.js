@@ -10,32 +10,6 @@ const DA_TO_EN = {
   'Svind': 'shrinkage',
 }
 
-export function mergeWoods(dkWoods, asiaWoods) {
-  const byEn = new Map()
-
-  for (const w of dkWoods) {
-    const key = w.nameEn ?? `__dk__${w.nameDa}`
-    byEn.set(key, { ...w, id: w.nameEn ? slugify(w.nameEn) : slugify(w.nameDa) })
-  }
-
-  for (const w of asiaWoods) {
-    const key = w.nameEn
-    if (byEn.has(key)) {
-      const existing = byEn.get(key)
-      byEn.set(key, {
-        ...existing,
-        nameEn: w.nameEn,
-        imageUrl: existing.imageUrl || w.imageUrl,
-        properties: { ...w.properties, ...existing.properties },
-      })
-    } else {
-      byEn.set(key, { ...w, id: slugify(w.nameEn), nameDa: null })
-    }
-  }
-
-  return [...byEn.values()]
-}
-
 export function normalizeKey(label) {
   return DA_TO_EN[label] ?? label
 }
