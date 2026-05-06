@@ -1,5 +1,6 @@
 [
   {
+    "id": "ahorn-amerikansk",
     "nameDa": "Ahorn, Amerikansk",
     "nameEn": null,
     "category": "american",
@@ -47,10 +48,10 @@
         "value": 14.7,
         "unit": ""
       }
-    },
-    "id": "ahorn-amerikansk"
+    }
   },
   {
+    "id": "ask-amerikansk",
     "nameDa": "Ask, Amerikansk",
     "nameEn": null,
     "category": "american",
@@ -98,10 +99,10 @@
         "value": 13.2,
         "unit": ""
       }
-    },
-    "id": "ask-amerikansk"
+    }
   },
   {
+    "id": "basswood",
     "nameDa": "Basswood",
     "nameEn": null,
     "category": "american",
@@ -149,10 +150,10 @@
         "value": 15.8,
         "unit": ""
       }
-    },
-    "id": "basswood"
+    }
   },
   {
+    "id": "ceder-western-red",
     "nameDa": "Ceder, Western Red",
     "nameEn": null,
     "category": "american",
@@ -200,10 +201,10 @@
         "value": 6.8,
         "unit": ""
       }
-    },
-    "id": "ceder-western-red"
+    }
   },
   {
+    "id": "eg-hvid-amerikansk",
     "nameDa": "Eg, Hvid Amerikansk",
     "nameEn": null,
     "category": "american",
@@ -251,10 +252,10 @@
         "value": 16.3,
         "unit": ""
       }
-    },
-    "id": "eg-hvid-amerikansk"
+    }
   },
   {
+    "id": "eg-roed-amerikansk",
     "nameDa": "Eg, Rød Amerikansk",
     "nameEn": null,
     "category": "american",
@@ -302,10 +303,10 @@
         "value": 13.7,
         "unit": ""
       }
-    },
-    "id": "eg-roed-amerikansk"
+    }
   },
   {
+    "id": "elm-amerikansk",
     "nameDa": "Elm, Amerikansk",
     "nameEn": null,
     "category": "american",
@@ -353,10 +354,10 @@
         "value": 14.6,
         "unit": ""
       }
-    },
-    "id": "elm-amerikansk"
+    }
   },
   {
+    "id": "kirsebaer-amerikansk",
     "nameDa": "Kirsebær, Amerikansk",
     "nameEn": null,
     "category": "american",
@@ -404,10 +405,10 @@
         "value": 11.5,
         "unit": ""
       }
-    },
-    "id": "kirsebaer-amerikansk"
+    }
   },
   {
+    "id": "oregon-pine",
     "nameDa": "Oregon Pine",
     "nameEn": null,
     "category": "american",
@@ -455,10 +456,10 @@
         "value": 11.6,
         "unit": ""
       }
-    },
-    "id": "oregon-pine"
+    }
   },
   {
+    "id": "poppel-amerikansk",
     "nameDa": "Poppel, Amerikansk",
     "nameEn": null,
     "category": "american",
@@ -506,10 +507,10 @@
         "value": 12.7,
         "unit": ""
       }
-    },
-    "id": "poppel-amerikansk"
+    }
   },
   {
+    "id": "red-alder",
     "nameDa": "Red alder",
     "nameEn": null,
     "category": "american",
@@ -557,10 +558,10 @@
         "value": 12.6,
         "unit": ""
       }
-    },
-    "id": "red-alder"
+    }
   },
   {
+    "id": "southern-yellow-pine",
     "nameDa": "Southern Yellow Pine",
     "nameEn": null,
     "category": "american",
@@ -608,10 +609,10 @@
         "value": 12.3,
         "unit": ""
       }
-    },
-    "id": "southern-yellow-pine"
+    }
   },
   {
+    "id": "valnoed-amerikansk",
     "nameDa": "Valnød, amerikansk",
     "nameEn": null,
     "category": "american",
@@ -659,14 +660,14 @@
         "value": 12.8,
         "unit": ""
       }
-    },
-    "id": "valnoed-amerikansk"
+    }
   },
   {
+    "id": "ahorn-europaeisk",
     "nameDa": "Ahorn, Europæisk",
     "nameEn": null,
     "category": "european",
-    "imageUrl": "",
+    "imageUrl": "https://globaltimber.dk/wp-content/uploads/2026/04/Ahorn-eur-600px-300px-webp.webp",
     "properties": {
       "botanical_name": {
         "type": "nominal",
@@ -710,14 +711,14 @@
         "value": 11.5,
         "unit": ""
       }
-    },
-    "id": "ahorn-europaeisk"
+    }
   },
   {
+    "id": "ask-europaeisk",
     "nameDa": "Ask, Europæisk",
     "nameEn": null,
     "category": "european",
-    "imageUrl": "",
+    "imageUrl": "https://globaltimber.dk/wp-content/uploads/2026/04/Ask-Eur.-600px-300px-webp.webp",
     "properties": {
       "botanical_name": {
         "type": "nominal",
@@ -761,14 +762,14 @@
         "value": 13.2,
         "unit": ""
       }
-    },
-    "id": "ask-europaeisk"
+    }
   },
   {
+    "id": "birk",
     "nameDa": "Birk",
     "nameEn": null,
     "category": "european",
-    "imageUrl": "",
+    "imageUrl": "https://globaltimber.dk/wp-content/uploads/2026/04/Birk-600px-300px-webp.webp",
     "properties": {
       "botanical_name": {
         "type": "nominal",
@@ -812,14 +813,14 @@
         "value": 13.7,
         "unit": ""
       }
-    },
-    "id": "birk"
+    }
   },
   {
+    "id": "boeg",
     "nameDa": "Bøg",
     "nameEn": null,
     "category": "european",
-    "imageUrl": "",
+    "imageUrl": "https://globaltimber.dk/wp-content/uploads/2026/04/Boeg-600px-300px-webp.webp",
     "properties": {
       "botanical_name": {
         "type": "nominal",
@@ -863,14 +864,14 @@
         "value": 18.3,
         "unit": ""
       }
-    },
-    "id": "boeg"
+    }
   },
   {
+    "id": "douglas",
     "nameDa": "Douglas",
     "nameEn": null,
     "category": "european",
-    "imageUrl": "",
+    "imageUrl": "https://globaltimber.dk/wp-content/uploads/2026/04/Douglas-600px-300px-webp.webp",
     "properties": {
       "botanical_name": {
         "type": "nominal",
@@ -914,14 +915,14 @@
         "value": 11.6,
         "unit": ""
       }
-    },
-    "id": "douglas"
+    }
   },
   {
+    "id": "eg-roeget-europaeisk",
     "nameDa": "Eg Røget, Europæisk",
     "nameEn": null,
     "category": "european",
-    "imageUrl": "",
+    "imageUrl": "https://globaltimber.dk/wp-content/uploads/2026/04/Eg-roeget-eur-600px-300px-webp.webp",
     "properties": {
       "botanical_name": {
         "type": "nominal",
@@ -965,14 +966,14 @@
         "value": 12.2,
         "unit": ""
       }
-    },
-    "id": "eg-roeget-europaeisk"
+    }
   },
   {
+    "id": "eg-europaeisk",
     "nameDa": "Eg, Europæisk",
     "nameEn": null,
     "category": "european",
-    "imageUrl": "",
+    "imageUrl": "https://globaltimber.dk/wp-content/uploads/2026/04/Eg-euro-moerkere-600px-300px-webp.webp",
     "properties": {
       "botanical_name": {
         "type": "nominal",
@@ -1016,14 +1017,14 @@
         "value": 12.2,
         "unit": ""
       }
-    },
-    "id": "eg-europaeisk"
+    }
   },
   {
+    "id": "thermo-ask",
     "nameDa": "Thermo Ask",
     "nameEn": null,
     "category": "european",
-    "imageUrl": "",
+    "imageUrl": "https://globaltimber.dk/wp-content/uploads/2026/04/Thermo-Ask-600px-300px-webp.webp",
     "properties": {
       "botanical_name": {
         "type": "nominal",
@@ -1033,14 +1034,14 @@
         "type": "nominal",
         "value": "Europa"
       }
-    },
-    "id": "thermo-ask"
+    }
   },
   {
+    "id": "ayous",
     "nameDa": "Ayous",
     "nameEn": null,
     "category": "tropical",
-    "imageUrl": "",
+    "imageUrl": "https://globaltimber.dk/wp-content/uploads/2026/04/Ayous-600px-300px-webp.webp",
     "properties": {
       "botanical_name": {
         "type": "nominal",
@@ -1084,14 +1085,14 @@
         "value": 9.5,
         "unit": ""
       }
-    },
-    "id": "ayous"
+    }
   },
   {
+    "id": "azobe",
     "nameDa": "Azobe",
     "nameEn": null,
     "category": "tropical",
-    "imageUrl": "",
+    "imageUrl": "https://globaltimber.dk/wp-content/uploads/2026/04/Azobe-600px-300px-webp.webp",
     "properties": {
       "botanical_name": {
         "type": "nominal",
@@ -1135,14 +1136,14 @@
         "value": 18.3,
         "unit": ""
       }
-    },
-    "id": "azobe"
+    }
   },
   {
+    "id": "bilinga",
     "nameDa": "Bilinga",
     "nameEn": null,
     "category": "tropical",
-    "imageUrl": "",
+    "imageUrl": "https://globaltimber.dk/wp-content/uploads/2026/04/Billinga.2-600px-300px-webp.webp",
     "properties": {
       "botanical_name": {
         "type": "nominal",
@@ -1186,14 +1187,14 @@
         "value": 14,
         "unit": ""
       }
-    },
-    "id": "bilinga"
+    }
   },
   {
+    "id": "bubinga",
     "nameDa": "Bubinga",
     "nameEn": null,
     "category": "tropical",
-    "imageUrl": "",
+    "imageUrl": "https://globaltimber.dk/wp-content/uploads/2026/04/Bubinga-600px-300px-webp.webp",
     "properties": {
       "botanical_name": {
         "type": "nominal",
@@ -1237,14 +1238,14 @@
         "value": 13.9,
         "unit": ""
       }
-    },
-    "id": "bubinga"
+    }
   },
   {
+    "id": "cumaru",
     "nameDa": "Cumaru",
     "nameEn": null,
     "category": "tropical",
-    "imageUrl": "",
+    "imageUrl": "https://globaltimber.dk/wp-content/uploads/2026/04/Cumaru.2-600px-300px-webp.webp",
     "properties": {
       "botanical_name": {
         "type": "nominal",
@@ -1289,14 +1290,14 @@
         "value": 13.9,
         "unit": ""
       }
-    },
-    "id": "cumaru"
+    }
   },
   {
+    "id": "denya",
     "nameDa": "Denya",
     "nameEn": null,
     "category": "tropical",
-    "imageUrl": "",
+    "imageUrl": "https://globaltimber.dk/wp-content/uploads/2026/04/Denya-600px-300px-webp.webp",
     "properties": {
       "botanical_name": {
         "type": "nominal",
@@ -1335,14 +1336,14 @@
         "value": 5.9,
         "unit": ""
       }
-    },
-    "id": "denya"
+    }
   },
   {
+    "id": "ipe",
     "nameDa": "Ipé",
     "nameEn": null,
     "category": "tropical",
-    "imageUrl": "",
+    "imageUrl": "https://globaltimber.dk/wp-content/uploads/2026/04/Ipe-600px-300px-webp.webp",
     "properties": {
       "botanical_name": {
         "type": "nominal",
@@ -1386,14 +1387,14 @@
         "value": 12.4,
         "unit": ""
       }
-    },
-    "id": "ipe"
+    }
   },
   {
+    "id": "iroko",
     "nameDa": "Iroko",
     "nameEn": null,
     "category": "tropical",
-    "imageUrl": "",
+    "imageUrl": "https://globaltimber.dk/wp-content/uploads/2026/04/Iroko-600px-300px-webp.webp",
     "properties": {
       "botanical_name": {
         "type": "nominal",
@@ -1428,14 +1429,14 @@
         "value": 8.8,
         "unit": ""
       }
-    },
-    "id": "iroko"
+    }
   },
   {
+    "id": "jatoba",
     "nameDa": "Jatoba",
     "nameEn": null,
     "category": "tropical",
-    "imageUrl": "",
+    "imageUrl": "https://globaltimber.dk/wp-content/uploads/2026/04/Jatoba-600px-300px-webp.webp",
     "properties": {
       "botanical_name": {
         "type": "nominal",
@@ -1480,14 +1481,14 @@
         "value": 12.1,
         "unit": ""
       }
-    },
-    "id": "jatoba"
+    }
   },
   {
+    "id": "kempas",
     "nameDa": "Kempas",
     "nameEn": null,
     "category": "tropical",
-    "imageUrl": "",
+    "imageUrl": "https://globaltimber.dk/wp-content/uploads/2026/04/Kempas-600px-300px-webp.webp",
     "properties": {
       "botanical_name": {
         "type": "nominal",
@@ -1531,14 +1532,14 @@
         "value": 13.3,
         "unit": ""
       }
-    },
-    "id": "kempas"
+    }
   },
   {
+    "id": "mahogni-khaya",
     "nameDa": "Mahogni, Khaya",
     "nameEn": null,
     "category": "tropical",
-    "imageUrl": "",
+    "imageUrl": "https://globaltimber.dk/wp-content/uploads/2026/04/Khaya-600px-300px-webp.webp",
     "properties": {
       "botanical_name": {
         "type": "nominal",
@@ -1582,14 +1583,14 @@
         "value": 10,
         "unit": ""
       }
-    },
-    "id": "mahogni-khaya"
+    }
   },
   {
+    "id": "mahogni-sapele",
     "nameDa": "Mahogni, Sapele",
     "nameEn": null,
     "category": "tropical",
-    "imageUrl": "",
+    "imageUrl": "https://globaltimber.dk/wp-content/uploads/2026/04/Sapele-600px-300px-webp.webp",
     "properties": {
       "botanical_name": {
         "type": "nominal",
@@ -1633,14 +1634,14 @@
         "value": 12.8,
         "unit": ""
       }
-    },
-    "id": "mahogni-sapele"
+    }
   },
   {
+    "id": "mahogni-sipo",
     "nameDa": "Mahogni, Sipo",
     "nameEn": null,
     "category": "tropical",
-    "imageUrl": "",
+    "imageUrl": "https://globaltimber.dk/wp-content/uploads/2026/04/Sipo-600px-300px-webp.webp",
     "properties": {
       "botanical_name": {
         "type": "nominal",
@@ -1684,14 +1685,14 @@
         "value": 11.8,
         "unit": ""
       }
-    },
-    "id": "mahogni-sipo"
+    }
   },
   {
+    "id": "meranti",
     "nameDa": "Meranti",
     "nameEn": null,
     "category": "tropical",
-    "imageUrl": "",
+    "imageUrl": "https://globaltimber.dk/wp-content/uploads/2026/04/Meranti-600px-300px-webp.webp",
     "properties": {
       "botanical_name": {
         "type": "nominal",
@@ -1730,14 +1731,14 @@
         "value": 12.6,
         "unit": ""
       }
-    },
-    "id": "meranti"
+    }
   },
   {
+    "id": "merbau",
     "nameDa": "Merbau",
     "nameEn": null,
     "category": "tropical",
-    "imageUrl": "",
+    "imageUrl": "https://globaltimber.dk/wp-content/uploads/2026/04/Merbau-600px-300px-webp.webp",
     "properties": {
       "botanical_name": {
         "type": "nominal",
@@ -1776,14 +1777,14 @@
         "value": 8,
         "unit": ""
       }
-    },
-    "id": "merbau"
+    }
   },
   {
+    "id": "tali",
     "nameDa": "Tali",
     "nameEn": null,
     "category": "tropical",
-    "imageUrl": "",
+    "imageUrl": "https://globaltimber.dk/wp-content/uploads/2026/04/Tali-600px-300px-webp.webp",
     "properties": {
       "botanical_name": {
         "type": "nominal",
@@ -1823,14 +1824,14 @@
         "value": 14.5,
         "unit": ""
       }
-    },
-    "id": "tali"
+    }
   },
   {
+    "id": "teak-plantage",
     "nameDa": "Teak, plantage",
     "nameEn": null,
     "category": "tropical",
-    "imageUrl": "",
+    "imageUrl": "https://globaltimber.dk/wp-content/uploads/2026/04/Teak-Plantage-600px-300px-webp.webp",
     "properties": {
       "botanical_name": {
         "type": "nominal",
@@ -1874,14 +1875,14 @@
         "value": 5,
         "unit": ""
       }
-    },
-    "id": "teak-plantage"
+    }
   },
   {
+    "id": "wenge",
     "nameDa": "Wengé",
     "nameEn": null,
     "category": "tropical",
-    "imageUrl": "",
+    "imageUrl": "https://globaltimber.dk/wp-content/uploads/2026/04/Wenge-600px-300px-webp.webp",
     "properties": {
       "botanical_name": {
         "type": "nominal",
@@ -1925,14 +1926,14 @@
         "value": 12.9,
         "unit": ""
       }
-    },
-    "id": "wenge"
+    }
   },
   {
+    "id": "zebrano",
     "nameDa": "Zebrano",
     "nameEn": null,
     "category": "tropical",
-    "imageUrl": "",
+    "imageUrl": "https://globaltimber.dk/wp-content/uploads/2026/04/Zebrano-600px-300px-webp.webp",
     "properties": {
       "botanical_name": {
         "type": "nominal",
@@ -1976,7 +1977,6 @@
         "value": 17.8,
         "unit": ""
       }
-    },
-    "id": "zebrano"
+    }
   }
 ]
