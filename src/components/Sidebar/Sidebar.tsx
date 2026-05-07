@@ -22,8 +22,6 @@ export function Sidebar({ woods }: Props) {
   const selectedIds = useStore((s) => s.selectedIds)
   const deselect = useStore((s) => s.deselect)
   const clearSelection = useStore((s) => s.clearSelection)
-  const drawerOpen = useStore((s) => s.drawerOpen)
-  const setDrawerOpen = useStore((s) => s.setDrawerOpen)
 
   const selectedWoods = selectedIds
     .map((id) => woods.find((w) => w.id === id))
@@ -34,14 +32,6 @@ export function Sidebar({ woods }: Props) {
       <div className="wb-rail-head">
         <div className="wb-rail-headline">
           <h2>Aktuelt udvalg</h2>
-          <button
-            className="wb-rail-add"
-            onClick={() => setDrawerOpen(!drawerOpen)}
-            aria-label={drawerOpen ? 'Luk bibliotek' : 'Åbn bibliotek'}
-            title={drawerOpen ? 'Luk bibliotek' : 'Åbn bibliotek'}
-          >
-            {drawerOpen ? '−' : '+'}
-          </button>
         </div>
         <button className="wb-rail-clear" onClick={clearSelection}>Ryd alt</button>
       </div>

@@ -4,7 +4,6 @@ import {
   XAxis,
   YAxis,
   Tooltip,
-  CartesianGrid,
   ResponsiveContainer,
 } from 'recharts'
 import { useStore } from '../../store/useStore'
@@ -75,20 +74,25 @@ export function WoodScatterChart({ woods }: Props) {
     <div style={{ width: '100%', flex: '1 1 0', minHeight: 0 }}>
       <ResponsiveContainer width="100%" height="100%" minHeight={260}>
         <ScatterChart margin={{ top: 4, right: 24, left: 24, bottom: 4 }}>
-          <CartesianGrid stroke="var(--color-muted-decoration)" />
           <XAxis
+            type="number"
+            domain={['auto', 'auto']}
             dataKey="x"
             name={effectiveX}
             tick={{ fontSize: 11, fill: 'var(--color-text-muted)' }}
             label={{ value: propertyLabel(effectiveX), position: 'insideBottom', offset: -4, fontSize: 11, fill: 'var(--color-text-muted)' }}
           />
           <YAxis
+            type="number"
+            domain={['auto', 'auto']}
             dataKey="y"
             name={effectiveY}
             tick={{ fontSize: 11, fill: 'var(--color-text-muted)' }}
             label={{ value: propertyLabel(effectiveY), angle: -90, position: 'insideLeft', fontSize: 11, fill: 'var(--color-text-muted)' }}
           />
           <Tooltip
+            wrapperStyle={{ transition: 'none' }}
+            isAnimationActive={false}
             content={({ payload }) => {
               if (!payload?.length) return null
               const d = payload[0]?.payload as DataPoint
@@ -111,6 +115,15 @@ export function WoodScatterChart({ woods }: Props) {
                 data={data}
                 fill={color}
                 opacity={dim ? 0.15 : 1}
+                shape={(props: any) => {
+                  const { cx, cy, payload } = props
+                  return (
+                    <g opacity={dim ? 0.15 : 1}>
+                      <circle cx={cx} cy={cy} r={4} fill={color} />
+                      <text x={cx + 7} y={cy + 4} fontSize={9} fill={color}>{payload.name}</text>
+                    </g>
+                  )
+                }}
               />
             )
           })}

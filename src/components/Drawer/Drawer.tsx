@@ -26,6 +26,7 @@ export function Drawer({ woods }: Props) {
   const deselect    = useStore((s) => s.deselect)
   const selectAll   = useStore((s) => s.selectAll)
   const clearSelection = useStore((s) => s.clearSelection)
+  const drawerOpen     = useStore((s) => s.drawerOpen)
   const setDrawerOpen  = useStore((s) => s.setDrawerOpen)
 
   const [search, setSearch]   = useState('')
@@ -61,9 +62,18 @@ export function Drawer({ woods }: Props) {
 
   return (
     <aside className="wb-drawer">
+      <button
+        className="wb-drawer-tab"
+        onClick={() => setDrawerOpen(!drawerOpen)}
+        aria-label={drawerOpen ? 'Luk bibliotek' : 'Åbn bibliotek'}
+        title={drawerOpen ? 'Luk bibliotek' : 'Åbn bibliotek'}
+      >
+        {drawerOpen ? '◀' : '▶'}
+      </button>
+
+      <div className="wb-drawer-inner">
       <div className="wb-drawer-head">
         <h2>Træbibliotek</h2>
-        <button className="wb-drawer-close" onClick={() => setDrawerOpen(false)} aria-label="Luk bibliotek">✕</button>
       </div>
 
       <div className="wb-search">
@@ -141,6 +151,7 @@ export function Drawer({ woods }: Props) {
           )
         })}
       </ul>
+      </div>
     </aside>
   )
 }
