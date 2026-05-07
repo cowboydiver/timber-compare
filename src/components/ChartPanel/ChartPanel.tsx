@@ -125,12 +125,6 @@ export function ChartPanel({ woods }: Props) {
               <option value="cladding">{dict.cladding}</option>
             </select>
           </div>
-          {activeTab === 'radar' && (
-            <div className="wb-tool wb-tool-info">
-              <span className="wb-tool-dot" />
-              Normaliseret 0–100 over alle træsorter
-            </div>
-          )}
           {activeTab === 'bar' && (
             <>
               <div className="wb-tool">
@@ -209,7 +203,7 @@ export function ChartPanel({ woods }: Props) {
 
         {activeTab === 'radar'   && <WoodRadarChart   woods={chartWoods} />}
         {activeTab === 'bar'     && <WoodBarChart     woods={chartWoods} />}
-        {activeTab === 'scatter' && <WoodScatterChart woods={chartWoods} />}
+        {activeTab === 'scatter' && <WoodScatterChart key={activeTab} woods={chartWoods} />}
 
         {/* legend */}
         <div className="wb-legend">

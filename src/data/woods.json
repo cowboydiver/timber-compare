@@ -1342,9 +1342,8 @@
         "unit": "kg/m3"
       },
       "moisture_content": {
-        "type": "numeric",
-        "value": 14,
-        "unit": "+/-2 %"
+        "type": "nominal",
+        "value": "14% +/- 2%"
       },
       "janka_hardness": {
         "type": "numeric",
@@ -1549,9 +1548,8 @@
         "unit": "kg/m3"
       },
       "moisture_content": {
-        "type": "numeric",
-        "value": 12,
-        "unit": "+/-2 %"
+        "type": "nominal",
+        "value": "12% +/- 2%"
       },
       "janka_hardness": {
         "type": "numeric",
@@ -1921,9 +1919,8 @@
         "unit": "kg/m3"
       },
       "moisture_content": {
-        "type": "numeric",
-        "value": 14,
-        "unit": "+/-2 %"
+        "type": "nominal",
+        "value": "14% +/- 2%"
       },
       "janka_hardness": {
         "type": "numeric",
