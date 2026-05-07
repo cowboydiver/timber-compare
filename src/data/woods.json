@@ -1096,6 +1096,36 @@
       "origin": {
         "type": "nominal",
         "value": "Europa"
+      },
+      "weight": {
+        "type": "numeric",
+        "value": 606,
+        "unit": "kg/m3"
+      },
+      "janka_hardness": {
+        "type": "numeric",
+        "value": 1281,
+        "unit": ""
+      },
+      "modulus_of_rupture": {
+        "type": "numeric",
+        "value": 90,
+        "unit": "MPa"
+      },
+      "bending_strength": {
+        "type": "numeric",
+        "value": 900,
+        "unit": ""
+      },
+      "modulus_of_elasticity": {
+        "type": "numeric",
+        "value": 12.0,
+        "unit": "GPa"
+      },
+      "shrinkage": {
+        "type": "numeric",
+        "value": 5.5,
+        "unit": ""
       }
     },
     "applications": [
@@ -1420,6 +1450,11 @@
         "type": "numeric",
         "value": 5.9,
         "unit": ""
+      },
+      "modulus_of_elasticity": {
+        "type": "numeric",
+        "value": 14.7,
+        "unit": "GPa"
       }
     },
     "applications": [
@@ -1521,6 +1556,11 @@
         "type": "numeric",
         "value": 8.8,
         "unit": ""
+      },
+      "weight": {
+        "type": "numeric",
+        "value": 660,
+        "unit": "kg/m3"
       }
     },
     "applications": [
@@ -1843,6 +1883,11 @@
         "type": "numeric",
         "value": 12.6,
         "unit": ""
+      },
+      "bending_strength": {
+        "type": "numeric",
+        "value": 750,
+        "unit": ""
       }
     },
     "applications": [
@@ -1891,6 +1936,11 @@
       "shrinkage": {
         "type": "numeric",
         "value": 8,
+        "unit": ""
+      },
+      "bending_strength": {
+        "type": "numeric",
+        "value": 1230,
         "unit": ""
       }
     },
@@ -1941,6 +1991,11 @@
         "type": "numeric",
         "value": 14.5,
         "unit": ""
+      },
+      "modulus_of_rupture": {
+        "type": "numeric",
+        "value": 154.0,
+        "unit": "MPa"
       }
     },
     "applications": [
@@ -2127,6 +2182,36 @@
       "origin": {
         "type": "nominal",
         "value": "Asien"
+      },
+      "weight": {
+        "type": "numeric",
+        "value": 930,
+        "unit": "kg/m3"
+      },
+      "janka_hardness": {
+        "type": "numeric",
+        "value": 1900,
+        "unit": ""
+      },
+      "modulus_of_rupture": {
+        "type": "numeric",
+        "value": 144.4,
+        "unit": "MPa"
+      },
+      "bending_strength": {
+        "type": "numeric",
+        "value": 1510,
+        "unit": ""
+      },
+      "modulus_of_elasticity": {
+        "type": "numeric",
+        "value": 20.0,
+        "unit": "GPa"
+      },
+      "shrinkage": {
+        "type": "numeric",
+        "value": 15.7,
+        "unit": ""
       }
     }
   },
@@ -2147,6 +2232,36 @@
       "origin": {
         "type": "nominal",
         "value": "Sydamerika"
+      },
+      "weight": {
+        "type": "numeric",
+        "value": 900,
+        "unit": "kg/m3"
+      },
+      "janka_hardness": {
+        "type": "numeric",
+        "value": 2400,
+        "unit": ""
+      },
+      "modulus_of_rupture": {
+        "type": "numeric",
+        "value": 124.0,
+        "unit": "MPa"
+      },
+      "bending_strength": {
+        "type": "numeric",
+        "value": 1300,
+        "unit": ""
+      },
+      "modulus_of_elasticity": {
+        "type": "numeric",
+        "value": 15.2,
+        "unit": "GPa"
+      },
+      "shrinkage": {
+        "type": "numeric",
+        "value": 14.5,
+        "unit": ""
       }
     }
   },
@@ -2168,6 +2283,36 @@
       "origin": {
         "type": "nominal",
         "value": "Sydamerika"
+      },
+      "weight": {
+        "type": "numeric",
+        "value": 820,
+        "unit": "kg/m3"
+      },
+      "janka_hardness": {
+        "type": "numeric",
+        "value": 1650,
+        "unit": ""
+      },
+      "modulus_of_rupture": {
+        "type": "numeric",
+        "value": 127.8,
+        "unit": "MPa"
+      },
+      "bending_strength": {
+        "type": "numeric",
+        "value": 1340,
+        "unit": ""
+      },
+      "modulus_of_elasticity": {
+        "type": "numeric",
+        "value": 15.57,
+        "unit": "GPa"
+      },
+      "shrinkage": {
+        "type": "numeric",
+        "value": 11.4,
+        "unit": ""
       }
     }
   },
@@ -2188,6 +2333,36 @@
       "origin": {
         "type": "nominal",
         "value": "Sydamerika"
+      },
+      "weight": {
+        "type": "numeric",
+        "value": 1060,
+        "unit": "kg/m3"
+      },
+      "janka_hardness": {
+        "type": "numeric",
+        "value": 3190,
+        "unit": ""
+      },
+      "modulus_of_rupture": {
+        "type": "numeric",
+        "value": 204.7,
+        "unit": "MPa"
+      },
+      "bending_strength": {
+        "type": "numeric",
+        "value": 2190,
+        "unit": ""
+      },
+      "modulus_of_elasticity": {
+        "type": "numeric",
+        "value": 22.97,
+        "unit": "GPa"
+      },
+      "shrinkage": {
+        "type": "numeric",
+        "value": 16.8,
+        "unit": ""
       }
     }
   }
