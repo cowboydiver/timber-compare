@@ -28,11 +28,6 @@ const CAT_CLASS: Record<string, string> = {
   tropical: 'wb-cat-tropical',
 }
 
-const APP_CLASS: Record<string, string> = {
-  sawn_lumber: 'wb-app-sawn-lumber',
-  deck_planks: 'wb-app-deck-planks',
-  cladding:    'wb-app-cladding',
-}
 
 export function Drawer({ woods }: Props) {
   const selectedIds    = useStore((s) => s.selectedIds)
