@@ -60,9 +60,9 @@ describe('ChartPanel', () => {
     expect(screen.getByLabelText(/x.akse/i)).toBeInTheDocument()
   })
 
-  it('shows normalization info text when radar tab is active', () => {
+  it('does not show normalization info text on radar tab', () => {
     render(<ChartPanel woods={woods} />)
-    expect(screen.getByText(/Normaliseret 0–100/i)).toBeInTheDocument()
+    expect(screen.queryByText(/Normaliseret 0–100/i)).not.toBeInTheDocument()
   })
 
   it('ArrowRight moves focus to next tab and activates it', () => {

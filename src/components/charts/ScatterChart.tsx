@@ -1,3 +1,4 @@
+import { useState, useEffect } from 'react'
 import {
   ScatterChart,
   Scatter,
@@ -26,6 +27,9 @@ type DataPoint = {
 type ScatterGroup = { name: string; color: string; data: DataPoint[] }
 
 export function WoodScatterChart({ woods }: Props) {
+  const [ready, setReady] = useState(false)
+  useEffect(() => { setReady(true) }, [])
+
   const selectedIds = useStore((s) => s.selectedIds)
   const hiddenIds   = useStore((s) => s.hiddenIds)
   const hoveredKey  = useStore((s) => s.hoveredKey)
@@ -41,6 +45,8 @@ export function WoodScatterChart({ woods }: Props) {
     .map((id) => woods.find((w) => w.id === id))
     .filter((w): w is Wood => w !== undefined)
     .filter((w) => !hiddenIds.includes(w.id))
+
+  if (!ready) return null
 
   if (selectedIds.length === 0) {
     return <p className="chart-empty">{dict.chartPlaceholder}</p>
@@ -76,7 +82,7 @@ export function WoodScatterChart({ woods }: Props) {
         <ScatterChart margin={{ top: 4, right: 24, left: 24, bottom: 4 }}>
           <XAxis
             type="number"
-            domain={['auto', 'auto']}
+            domain={[(min: number) => Math.max(0, Math.floor(min * 0.9)), (max: number) => Math.ceil(max * 1.1)]}
             dataKey="x"
             name={effectiveX}
             tick={{ fontSize: 11, fill: 'var(--color-text-muted)' }}
@@ -84,7 +90,7 @@ export function WoodScatterChart({ woods }: Props) {
           />
           <YAxis
             type="number"
-            domain={['auto', 'auto']}
+            domain={[(min: number) => Math.max(0, Math.floor(min * 0.9)), (max: number) => Math.ceil(max * 1.1)]}
             dataKey="y"
             name={effectiveY}
             tick={{ fontSize: 11, fill: 'var(--color-text-muted)' }}
@@ -119,8 +125,8 @@ export function WoodScatterChart({ woods }: Props) {
                   const { cx, cy, payload } = props
                   return (
                     <g opacity={dim ? 0.15 : 1}>
-                      <circle cx={cx} cy={cy} r={4} fill={color} />
-                      <text x={cx + 7} y={cy + 4} fontSize={9} fill={color}>{payload.name}</text>
+                      <circle cx={cx} cy={cy} r={6} fill={color} />
+                      <text x={cx + 9} y={cy + 5} fontSize={11} fill={color}>{payload.name}</text>
                     </g>
                   )
                 }}

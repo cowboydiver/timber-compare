@@ -23,6 +23,7 @@ export function isUnavailable(value: PropertyValue): value is { type: 'unavailab
 export function getNumericProperties(woods: Wood[]): string[] {
   const keys = new Set(woods.flatMap((w) => Object.keys(w.properties)))
   return [...keys].filter((key) =>
+    key !== 'moisture_content' &&
     woods.some((w) => w.properties[key]?.type === 'numeric'),
   )
 }

@@ -306,7 +306,6 @@
   overflow: hidden;
 }
 
-/* Fixed 56px toolbar */
 .wb-toolbar {
   display: flex;
   align-items: flex-end;
@@ -314,13 +313,12 @@
   padding: 0 20px;
   background: var(--color-bg-subtle);
   gap: 16px;
-  flex-wrap: nowrap;
-  height: 56px;
+  flex-wrap: wrap;
+  min-height: 56px;
   flex-shrink: 0;
-  overflow: hidden;
 }
 
-.wb-segments { display: flex; gap: 0; }
+.wb-segments { display: flex; gap: 0; flex-shrink: 0; }
 
 .wb-seg {
   background: none;
@@ -363,6 +361,7 @@
   gap: 14px;
   padding-bottom: 6px;
   align-self: flex-end;
+  flex-shrink: 0;
 }
 
 .wb-tool {

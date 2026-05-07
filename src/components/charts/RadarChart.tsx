@@ -65,7 +65,7 @@ export function WoodRadarChart({ woods }: Props) {
       <RadarChart data={data}>
         <PolarGrid stroke="var(--color-muted-decoration)" />
         <PolarAngleAxis dataKey="property" tick={{ fontSize: 11, fill: 'var(--color-text-muted)', fontFamily: 'Roboto Slab, serif' }} />
-        <PolarRadiusAxis angle={30} domain={[0, 100]} tick={{ fontSize: 9, fill: 'var(--color-muted-decoration)' }} />
+        <PolarRadiusAxis angle={30} domain={[0, 100]} tick={false} />
         {selectedWoods.map((w, i) => {
           const color = COLORS[i % COLORS.length]
           const isHov = hoveredKey === w.id
