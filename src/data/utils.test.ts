@@ -7,6 +7,7 @@ const oak: Wood = {
   nameDa: 'Eg',
   nameEn: 'Oak',
   category: 'european',
+  applications: ['sawn_lumber'],
   imageUrl: '',
   properties: { density: { type: 'numeric', value: 720, unit: 'kg/m³' } },
 }
@@ -16,6 +17,7 @@ const teak: Wood = {
   nameDa: 'Teak',
   nameEn: 'Teak',
   category: 'tropical',
+  applications: ['sawn_lumber'],
   imageUrl: '',
   properties: { density: { type: 'numeric', value: 630, unit: 'kg/m³' } },
 }
@@ -25,6 +27,7 @@ const walnut: Wood = {
   nameDa: 'Valnød',
   nameEn: 'Walnut',
   category: 'american',
+  applications: ['sawn_lumber'],
   imageUrl: '',
   properties: { density: { type: 'unavailable' } },
 }

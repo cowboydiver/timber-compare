@@ -1,12 +1,13 @@
 import { propertyLabels } from '../i18n/dictionary'
-import type { Category, PropertyValue, Wood } from './types'
+import type { Application, Category, PropertyValue, Wood } from './types'
 
 export function filterWoods(
   woods: Wood[],
-  { search, category }: { search?: string; category?: Category },
+  { search, category, application }: { search?: string; category?: Category; application?: Application },
 ): Wood[] {
   return woods.filter((w) => {
     if (category && w.category !== category) return false
+    if (application && !w.applications.includes(application)) return false
     if (search) {
       const q = search.toLowerCase()
       if (!(w.nameDa?.toLowerCase().includes(q) ?? false)) return false

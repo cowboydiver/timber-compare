@@ -10,6 +10,7 @@ const woods: Wood[] = [
     nameDa: 'Eg',
     nameEn: 'Oak',
     category: 'european',
+    applications: ['sawn_lumber'],
     imageUrl: '',
     properties: {
       botanical_name: { type: 'nominal', value: 'Quercus robur' },
@@ -24,6 +25,7 @@ const woods: Wood[] = [
     nameDa: 'Teak',
     nameEn: 'Teak',
     category: 'tropical',
+    applications: ['sawn_lumber'],
     imageUrl: '',
     properties: {},
   },

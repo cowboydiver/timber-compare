@@ -1,4 +1,5 @@
 import { create } from 'zustand'
+import type { Application } from '../data/types'
 
 type Tab = 'radar' | 'bar' | 'scatter'
 export type ColorBy = 'category' | 'origin'
@@ -14,6 +15,7 @@ interface StoreState {
   scatterX: string
   scatterY: string
   scatterColor: string
+  chartApplication: Application | 'all'
   select: (id: string) => void
   deselect: (id: string) => void
   clearSelection: () => void
@@ -27,6 +29,7 @@ interface StoreState {
   setScatterX: (key: string) => void
   setScatterY: (key: string) => void
   setScatterColor: (key: string) => void
+  setChartApplication: (app: Application | 'all') => void
 }
 
 export const useStore = create<StoreState>()((set) => ({
@@ -40,6 +43,7 @@ export const useStore = create<StoreState>()((set) => ({
   scatterX: '',
   scatterY: '',
   scatterColor: '',
+  chartApplication: 'all',
 
   select: (id: string) => set((s) => {
     if (s.selectedIds.includes(id)) return {}
@@ -73,4 +77,5 @@ export const useStore = create<StoreState>()((set) => ({
   setScatterX: (key: string) => set({ scatterX: key }),
   setScatterY: (key: string) => set({ scatterY: key }),
   setScatterColor: (key: string) => set({ scatterColor: key }),
+  setChartApplication: (app: Application | 'all') => set({ chartApplication: app }),
 }))

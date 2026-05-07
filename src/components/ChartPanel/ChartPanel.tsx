@@ -6,7 +6,7 @@ import { WoodScatterChart } from '../charts/ScatterChart'
 import { COLORS, groupColor, groupKey } from '../charts/palette'
 import { getNumericProperties, propertyLabel } from '../../data/utils'
 import { dict } from '../../i18n/dictionary'
-import type { Wood } from '../../data/types'
+import type { Application, Wood } from '../../data/types'
 
 interface Props {
   woods: Wood[]
@@ -25,23 +25,29 @@ const BAR_PROPS = [
 ]
 
 export function ChartPanel({ woods }: Props) {
-  const activeTab      = useStore((s) => s.activeTab)
-  const setActiveTab   = useStore((s) => s.setActiveTab)
-  const colorBy        = useStore((s) => s.colorBy)
-  const setColorBy     = useStore((s) => s.setColorBy)
-  const barProperty    = useStore((s) => s.barProperty)
-  const setBarProperty = useStore((s) => s.setBarProperty)
-  const scatterX       = useStore((s) => s.scatterX)
-  const scatterY       = useStore((s) => s.scatterY)
-  const setScatterX    = useStore((s) => s.setScatterX)
-  const setScatterY    = useStore((s) => s.setScatterY)
-  const selectedIds    = useStore((s) => s.selectedIds)
-  const hiddenIds      = useStore((s) => s.hiddenIds)
-  const hoveredKey     = useStore((s) => s.hoveredKey)
-  const toggleHidden   = useStore((s) => s.toggleHidden)
-  const setHovered     = useStore((s) => s.setHovered)
+  const activeTab          = useStore((s) => s.activeTab)
+  const setActiveTab       = useStore((s) => s.setActiveTab)
+  const colorBy            = useStore((s) => s.colorBy)
+  const setColorBy         = useStore((s) => s.setColorBy)
+  const barProperty        = useStore((s) => s.barProperty)
+  const setBarProperty     = useStore((s) => s.setBarProperty)
+  const scatterX           = useStore((s) => s.scatterX)
+  const scatterY           = useStore((s) => s.scatterY)
+  const setScatterX        = useStore((s) => s.setScatterX)
+  const setScatterY        = useStore((s) => s.setScatterY)
+  const selectedIds        = useStore((s) => s.selectedIds)
+  const hiddenIds          = useStore((s) => s.hiddenIds)
+  const hoveredKey         = useStore((s) => s.hoveredKey)
+  const toggleHidden       = useStore((s) => s.toggleHidden)
+  const setHovered         = useStore((s) => s.setHovered)
+  const chartApplication   = useStore((s) => s.chartApplication)
+  const setChartApplication = useStore((s) => s.setChartApplication)
 
   const numericKeys = getNumericProperties(woods)
+
+  const chartWoods = chartApplication === 'all'
+    ? woods
+    : woods.filter((w) => w.applications.includes(chartApplication))
   const effectiveBarProp = barProperty || 'janka_hardness'
   const effectiveX = scatterX || numericKeys[0] || ''
   const effectiveY = scatterY || numericKeys[1] || numericKeys[0] || ''
@@ -57,9 +63,9 @@ export function ChartPanel({ woods }: Props) {
     tabRefs.current[next]?.focus()
   }
 
-  // Derive selected woods in order for radar legend (series colors)
+  // Derive selected woods in order for radar legend (series colors), respecting application filter
   const selectedWoods = selectedIds
-    .map((id) => woods.find((w) => w.id === id))
+    .map((id) => chartWoods.find((w) => w.id === id))
     .filter((w): w is Wood => w !== undefined)
 
   // Visible woods (excluding hidden) for bar/scatter group legend
@@ -106,6 +112,19 @@ export function ChartPanel({ woods }: Props) {
         </div>
 
         <div className="wb-tools">
+          <div className="wb-tool">
+            <label htmlFor="chart-app">{dict.application}</label>
+            <select
+              id="chart-app"
+              value={chartApplication}
+              onChange={(e) => setChartApplication(e.target.value as Application | 'all')}
+            >
+              <option value="all">Alle</option>
+              <option value="sawn_lumber">{dict.sawn_lumber}</option>
+              <option value="deck_planks">{dict.deck_planks}</option>
+              <option value="cladding">{dict.cladding}</option>
+            </select>
+          </div>
           {activeTab === 'radar' && (
             <div className="wb-tool wb-tool-info">
               <span className="wb-tool-dot" />
@@ -188,9 +207,9 @@ export function ChartPanel({ woods }: Props) {
         <span className="wb-corner wb-corner-bl" />
         <span className="wb-corner wb-corner-br" />
 
-        {activeTab === 'radar' && <WoodRadarChart woods={woods} />}
-        {activeTab === 'bar'   && <WoodBarChart   woods={woods} />}
-        {activeTab === 'scatter' && <WoodScatterChart woods={woods} />}
+        {activeTab === 'radar'   && <WoodRadarChart   woods={chartWoods} />}
+        {activeTab === 'bar'     && <WoodBarChart     woods={chartWoods} />}
+        {activeTab === 'scatter' && <WoodScatterChart woods={chartWoods} />}
 
         {/* legend */}
         <div className="wb-legend">

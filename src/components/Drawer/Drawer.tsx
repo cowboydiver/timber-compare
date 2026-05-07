@@ -1,7 +1,8 @@
 import { useState } from 'react'
 import { useStore } from '../../store/useStore'
 import { filterWoods } from '../../data/utils'
-import type { Category, Wood } from '../../data/types'
+import { dict } from '../../i18n/dictionary'
+import type { Application, Category, Wood } from '../../data/types'
 
 interface Props {
   woods: Wood[]
@@ -14,23 +15,37 @@ const CATEGORIES: Array<{ key: Category | 'all'; label: string }> = [
   { key: 'tropical', label: 'Tropisk' },
 ]
 
+const APPLICATIONS: Array<{ key: Application | 'all'; label: string }> = [
+  { key: 'all',         label: 'Alle' },
+  { key: 'sawn_lumber', label: dict.sawn_lumber },
+  { key: 'deck_planks', label: dict.deck_planks },
+  { key: 'cladding',    label: dict.cladding },
+]
+
 const CAT_CLASS: Record<string, string> = {
   american: 'wb-cat-american',
   european: 'wb-cat-european',
   tropical: 'wb-cat-tropical',
 }
 
+const APP_CLASS: Record<string, string> = {
+  sawn_lumber: 'wb-app-sawn-lumber',
+  deck_planks: 'wb-app-deck-planks',
+  cladding:    'wb-app-cladding',
+}
+
 export function Drawer({ woods }: Props) {
-  const selectedIds = useStore((s) => s.selectedIds)
-  const select      = useStore((s) => s.select)
-  const deselect    = useStore((s) => s.deselect)
-  const selectAll   = useStore((s) => s.selectAll)
+  const selectedIds    = useStore((s) => s.selectedIds)
+  const select         = useStore((s) => s.select)
+  const deselect       = useStore((s) => s.deselect)
+  const selectAll      = useStore((s) => s.selectAll)
   const clearSelection = useStore((s) => s.clearSelection)
   const drawerOpen     = useStore((s) => s.drawerOpen)
   const setDrawerOpen  = useStore((s) => s.setDrawerOpen)
 
-  const [search, setSearch]   = useState('')
-  const [cat, setCat]         = useState<Category | 'all'>('all')
+  const [search, setSearch] = useState('')
+  const [cat, setCat]       = useState<Category | 'all'>('all')
+  const [app, setApp]       = useState<Application | 'all'>('all')
 
   const maxJanka = Math.max(
     ...woods.flatMap((w) => {
@@ -43,11 +58,12 @@ export function Drawer({ woods }: Props) {
   const filtered = filterWoods(woods, {
     search: search || undefined,
     category: cat === 'all' ? undefined : cat,
+    application: app === 'all' ? undefined : app,
   })
 
-  const counts: Record<string, number> = { all: woods.length }
-  for (const c of ['american', 'european', 'tropical'] as Category[]) {
-    counts[c] = woods.filter((w) => w.category === c).length
+  const appCounts: Record<string, number> = { all: woods.length }
+  for (const { key } of APPLICATIONS.slice(1)) {
+    appCounts[key] = woods.filter((w) => w.applications.includes(key as Application)).length
   }
 
   function toggleWood(w: Wood) {
@@ -97,7 +113,19 @@ export function Drawer({ woods }: Props) {
             className={`wb-tab-cat${cat === key ? ' is-on' : ''}`}
             onClick={() => setCat(key)}
           >
-            {label} <span>{counts[key]}</span>
+            {label}
+          </button>
+        ))}
+      </div>
+
+      <div className="wb-tabs-cat wb-tabs-app">
+        {APPLICATIONS.map(({ key, label }) => (
+          <button
+            key={key}
+            className={`wb-tab-cat${app === key ? ' is-on' : ''}${key !== 'all' ? ` wb-tab-app-${key}` : ''}`}
+            onClick={() => setApp(key)}
+          >
+            {label} <span>{appCounts[key]}</span>
           </button>
         ))}
       </div>

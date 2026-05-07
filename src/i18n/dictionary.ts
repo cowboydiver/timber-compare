@@ -4,6 +4,9 @@ export const dict = {
   american: 'Amerikansk',
   european: 'Europæisk',
   tropical: 'Tropisk',
+  sawn_lumber: 'Savet træ',
+  deck_planks: 'Terrasse',
+  cladding: 'Beklædning',
   radar: 'Radar',
   bar: 'Søjle',
   scatter: 'Punkter',
@@ -18,6 +21,7 @@ export const dict = {
   axisX: 'X-akse',
   axisY: 'Y-akse',
   color: 'Farve',
+  application: 'Anvendelse',
 } as const
 
 export const propertyLabels: Record<string, string> = {

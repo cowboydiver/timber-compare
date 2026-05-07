@@ -695,6 +695,30 @@
 
 .wb-lib-name { color: var(--color-text); letter-spacing: -0.005em; }
 
+
+.wb-app-tag {
+  font-size: 9px;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  padding: 1px 5px;
+  border-radius: 2px;
+  color: #fefefe;
+  line-height: 1.5;
+}
+
+.wb-app-sawn-lumber { background: #8b7355; }
+.wb-app-deck-planks { background: #5e7a5e; }
+.wb-app-cladding    { background: #5a6e78; }
+
+.wb-tabs-app {
+  padding-top: 0;
+  border-top: 1px solid var(--color-sand-light);
+}
+
+.wb-tab-app-sawn_lumber.is-on { background: #8b7355; border-color: #8b7355; }
+.wb-tab-app-deck_planks.is-on { background: #5e7a5e; border-color: #5e7a5e; }
+.wb-tab-app-cladding.is-on    { background: #5a6e78; border-color: #5a6e78; }
+
 .wb-lib-janka {
   display: flex;
   align-items: center;

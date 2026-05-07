@@ -24,6 +24,7 @@ const woods: Wood[] = [
     nameDa: 'Eg',
     nameEn: 'Oak',
     category: 'european',
+    applications: ['sawn_lumber'],
     imageUrl: 'oak.jpg',
     properties: {
       weight: { type: 'numeric', value: 700, unit: 'kg/m3' },
@@ -36,6 +37,7 @@ const woods: Wood[] = [
     nameDa: 'Teak',
     nameEn: 'Teak',
     category: 'tropical',
+    applications: ['sawn_lumber'],
     imageUrl: 'teak.jpg',
     properties: {
       weight: { type: 'numeric', value: 630, unit: 'kg/m3' },

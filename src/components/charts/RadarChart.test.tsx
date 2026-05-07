@@ -10,6 +10,7 @@ const woods: Wood[] = [
     nameDa: 'Eg',
     nameEn: 'Oak',
     category: 'european',
+    applications: ['sawn_lumber'],
     imageUrl: 'oak.jpg',
     properties: {
       weight: { type: 'numeric', value: 700, unit: 'kg/m3' },
